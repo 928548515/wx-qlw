@@ -1,0 +1,40 @@
+<!--Map-->
+<view class="map_box">
+  <view class='search'>
+    <view class='searchInput'>
+      <picker mode="date" value='{{ searchdate }}' bindchange='bindDataChange' start="{{ startData }}" end="{{ endData }}">
+        <view class='picker drop-down'>
+          {{ searchdate }}
+        </view>
+      </picker>
+    </view>
+    <view class='choose_button' bindtap='querytrail'>查询轨迹</view>
+     <!-- <view class='statai'>
+      <view>
+        <text>活动距离：</text>
+        <text>{{ distance&&distance>1?distance+" km":distance&&distance<=1?distance*1000+" m":'0 km'}} </text>
+      </view>
+       <view>
+        <text>活动时长：</text>
+        <text>{{ cost&&cost>1?cost+" h":cost&&cost<=1?cost*60+" m":'0 h'}}</text>
+      </view>
+    </view> -->
+  </view>
+  <map id="navi_map" longitude="{{ longitude }}" latitude="{{ latitude }}" scale="16" markers="{{markers}}" polyline="{{polyline}}">
+    <!-- <cover-view class='choose_bar'>
+      <cover-view class='active_box'>
+        <cover-image class='active_icon' src='{{ url }}'></cover-image>
+        <cover-view class='active_body'>
+          <cover-view class='active_distance'>
+            <cover-view>活动距离：</cover-view>
+            <cover-view>{{ distance }}km</cover-view>
+          </cover-view>
+          <cover-view class='activity_time'>
+            <cover-view>活动时间：</cover-view>
+            <cover-view>{{ cost }}小时</cover-view>
+          </cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view> -->
+  </map>
+</view>

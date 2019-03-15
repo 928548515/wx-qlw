@@ -1,0 +1,20 @@
+/* pages/components/pages/nav/nav.wxss */
+
+.nav-titile {
+  background-color: #49c8d5;
+  height: 80rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.nav-nav-titile-icon {
+  height: 30rpx;
+  width: 30rpx;
+  border-left: solid 6rpx #fff;
+  border-bottom: solid 6rpx #fff;
+  float: left;
+  margin-top: 25rpx;
+  transform: rotate(45deg);
+  margin-left: 35rpx;
+}

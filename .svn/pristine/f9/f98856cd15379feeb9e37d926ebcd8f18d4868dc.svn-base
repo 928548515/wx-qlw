@@ -1,0 +1,24 @@
+<!--pages/my/page/myData/resetPwd/resetPwd.wxml-->
+<view class='container'>
+  <view class='info'>
+    <i-cell-group i-class="list">
+      <i-cell title="原密码:">
+        <i-icon type="businesscard_fill" size="25" slot="icon" />
+        <input slot="footer" password value="{{password}}" placeholder='请输入原密码' bindinput="pwdChange"></input>
+      </i-cell>
+      <i-cell title="新密码:">
+        <i-icon type="brush" size="25" color="#80848f" slot="icon" />
+        <input slot="footer" password value="{{newPassword}}" placeholder='请输入新密码' bindinput="newPwdChange"></input>
+      </i-cell>
+      <i-cell title="确认新密码:">
+        <i-icon type="brush_fill" size="25" color="#80848f" slot="icon" />
+        <input slot="footer" password value="{{newConfirmPassword}}" placeholder='请再次输入新密码' bindinput="newPwdConfirmChange"></input>
+      </i-cell>
+    </i-cell-group>
+  </view>
+  <view class='btns'>
+    <button bindtap='submit'>确 定</button>
+    <button bindtap='toback'>返回</button>
+  </view>
+  <i-message id="message" />
+</view>

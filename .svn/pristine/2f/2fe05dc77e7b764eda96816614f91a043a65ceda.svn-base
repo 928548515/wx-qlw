@@ -1,0 +1,26 @@
+.line {
+  height: 10rpx;
+  background-color: #eee;
+}
+
+.bizHandle image {
+  width: 62rpx;
+  height: 47rpx;
+}
+
+.bizHandle {
+  display: flex;
+}
+
+.bizHandle>navigator {
+  height: 120rpx;
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bizHandle>navigator text {
+  margin-left: 10rpx;
+  font-size: 35rpx;
+}

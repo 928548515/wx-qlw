@@ -1,0 +1,5 @@
+<!-- 导航头 -->
+<view class='nav-titile'>
+  <view class='nav-nav-titile-icon' bindtap='rollback'></view>
+  <text>{{name}}</text>
+</view>

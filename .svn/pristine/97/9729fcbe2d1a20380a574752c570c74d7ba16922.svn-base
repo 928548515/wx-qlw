@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "not-login": "/components/notLogin/notLogin",
+    "no-data":"/components/noData/noData",
+    "i-switch": "/components/dist/switch/index"
+  },
+  "navigationBarBackgroundColor": "#49C8D5",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "消息"
+}

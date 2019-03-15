@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "top-nav": "/pages/components/pages/nav/nav",
+    "no-data": "/components/noData/noData"
+  },
+  "navigationBarBackgroundColor": "#49C8D5",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "犬只注销"
+}

@@ -1,0 +1,13 @@
+<view class='tar'>
+  <!--空页图片-->
+  <view class='image'>
+     <image src='{{  }}'></image>
+  </view>
+  <view class='text'>
+    <text>您还没有登录,请登录后查看</text>
+  </view>
+  <!--登录按钮-->
+  <view>
+    <button class='login' bindtap='tologin'>登录</button>
+  </view>
+</view>

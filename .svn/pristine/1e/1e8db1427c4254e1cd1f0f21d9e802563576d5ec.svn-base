@@ -1,0 +1,54 @@
+/* pages/home/forbid/forbid.wxss */
+
+page {
+  background-color: #eee;
+}
+.container{
+   background-color: #eee;
+   height:100%;
+}
+.forbid_dog_tar {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx 0;
+  padding-right: 10rpx;
+}
+
+.forbid_dog_box {
+  width: 100%;
+  display: flex;
+  margin-bottom:20rpx;
+  box-shadow: 1rpx 1rpx 1rpx #ccc;
+  background-color: #fff;
+}
+
+image{
+  width: 220rpx;
+  height: 200rpx;
+  margin: 10rpx;
+  background-color: #eee;
+  margin-bottom: 0;
+}
+.content{
+  font-size: 26rpx;
+  width: 100%;
+  padding: 10rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+.client{
+  display: flex;
+}
+.client>text:first-child{
+  width: 35%;
+}
+.client{
+  margin: 6rpx 0;
+  line-height: 34rpx;
+}
+.client>text:last-child{
+  width: 65%;
+  color: #888;
+  font-size: 25rpx;
+}

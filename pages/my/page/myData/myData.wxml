@@ -1,0 +1,29 @@
+<!--pages/my/page/myData/myData.wxml-->
+<view class='container'>
+  <view class='item'>
+    <!-- <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image> -->
+    <view class='titile'>个人信息</view>
+    <view class='content'>
+      <view class='view-txt'>
+        <view>姓名：</view>
+        <view>{{userInfo.name}}</view>
+      </view>
+      <view class='view-txt'>
+        <view>电话：</view>
+        <view>{{userInfo.phone}}</view>
+      </view>
+      <view class='view-txt'>
+        <view>邮箱地址：</view>
+        <view>{{userInfo.email?userInfo.email:""}}</view>
+      </view>
+      <view class='view-txt'>
+        <view>性别：</view>
+        <view>{{userInfo.sex==0?'男':userInfo.sex==1?'女':''}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='btns'>
+    <button class='submit' bindtap='toResetPwd'>修改密码</button>
+    <button bindtap='toBack'>返 回</button>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+<!--pages/my/page/appointment/appointment-info/appointment-info.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='container'>
+    <view class='list'>
+      <view>
+        <text class='icon'>预约时间：</text>
+        <view class='selecter dateContainer'>
+          <picker mode='date' class='dateset' name='date' start="{{curData}}" end="2010-09-01" bindchange="bindDateChange" value='{{selectTime.select_date}}'>{{curData}}</picker>
+          <picker mode='time' name='time' class='dateset' start='00:00' end="24:00" value='{{selectTime.select_time}}' bindchange="bindTimeChange">{{selectTime.select_time}}</picker>
+        </view>
+      </view>
+      <view>
+        <text class='icon'>预约业务：</text>
+        <view>
+          <picker mode='selector' name='bizType' class='selecter' range='{{bizList}}' bindchange="bindBizChange" value='{{bizListIndex}}'>{{bizList[bizListIndex]}}</picker>
+        </view>
+      </view>
+      <view>
+        <text>预约人：</text>
+        <view>
+          <input class='selecter' name='uname' placeholder='请输入内容'></input>
+        </view>
+      </view>
+      <view class='phone-container'>
+        <text class='icon'>手机号：</text>
+        <view>
+          <input class='selecter' name='phone' bindinput='regPhone' placeholder='请输入内容'></input>
+          <text class='msg' wx:if='{{message}}'>{{message}}</text>
+        </view>
+      </view>
+      <view>
+        <text class='icon'>预约网点：</text>
+        <view>
+          <input disabled value='{{bizServerList.organizationName}}' name='organizationName' class='selecter' disabled></input>
+        </view>
+        <!-- <picker mode='selector' name='branch' class='selecter' range='{{bizServerList}}' bindchange="bindBizserverChange" value='{{bizServerIndex}}'>{{bizServerList[bizServerIndex]}}</picker> -->
+
+      </view>
+    </view>
+    <view class='btns'>
+      <button formType="submit" disabled='{{message}}' class='sub'>提 交</button>
+      <button formType="reset" class='clear'>返 回</button>
+    </view>
+  </view>
+</form>

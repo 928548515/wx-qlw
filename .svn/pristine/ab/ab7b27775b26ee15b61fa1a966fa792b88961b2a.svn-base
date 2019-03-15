@@ -1,0 +1,246 @@
+<!--pages/my/page/pet/petInfo/petInfo.wxml-->
+<!-- nav -->
+<!-- <top-nav name="宠物详情" rollbackUrl="/pages/my/page/pet/pet" /> -->
+<view class='container'>
+  <view class='card'>
+    <view class='titile'>基本信息</view>
+    <view class='card-inner'>
+      <view class='text-txt'>
+        <text>犬名：</text>
+        <text>{{dogInfos.dogInfo.dogName?dogInfos.dogInfo.dogName:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>品种：</text>
+        <text>{{dogInfos.dogInfo.breed?dogInfos.dogInfo.breed:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>性别：</text>
+        <text>{{dogInfos.dogInfo.dogGender==0?"雄":"雌"}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>犬龄：</text>
+        <text>{{dogInfos.dogInfo.dogAge?dogInfos.dogInfo.dogAge:0}} 岁</text>
+      </view>
+      <view class='text-txt'>
+        <text>出生日期：</text>
+        <text>{{dogInfos.dogInfo.birthTime?dogInfos.dogInfo.birthTime:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>毛色：</text>
+        <text>{{dogInfos.dogInfo.color?dogInfos.dogInfo.color:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>父本：</text>
+        <text>{{dogInfos.dogInfo.fatherId?dogInfos.dogInfo.fatherId:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>母本：</text>
+        <text>{{dogInfos.dogInfo.motherId?dogInfos.dogInfo.motherId:'~'}}</text>
+      </view>
+    </view>
+    <!--  
+    <view class='edit'>
+      <image src='/assets/page/my/pet/petInfo/edit-icon.png'></image>
+      <view>编辑</view>
+    </view>
+    -->
+  </view>
+
+  <!--照片 -->
+  <view class='pic'>
+    <view class='titile'>照片
+      <!-- <view class='edit'>
+        <image src='/assets/page/my/pet/petInfo/del-icon-2.png'></image>
+        <text>删除</text>
+      </view> -->
+    </view>
+    <scroll-view class='pic-content' scroll-x="true">
+    <!-- 
+      <image src='/assets/page/my/pet/petInfo/dog-icon-del.png' style="background-image:url(/assets/page/my/pet/petInfo/dog-icon-del.png); background-size: 30% 30%;  background-repeat: no-repeat;border:  dashed 1rpx red;"  bindlongpress='delImage' bindtap='showImageInfo' data-picId="12345"></image>
+      <image src='/assets/page/my/pet/petInfo/dog-icon-del.png' style="background-image:url(/assets/page/my/pet/petInfo/dog-icon-del.png); background-size: 30% 30%;  background-repeat: no-repeat;border:  dashed 1rpx red;"></image>
+    -->
+      <image wx:for='{{dogInfos.urlLsit}}' wx:if='{{dogInfos.urlLsit&&dogInfos.urlLsit.length>0}}' wx:key='{{index}}' src='{{item.thumbnailUrl}}'
+        bindlongpress='delImage' bindtap='showImageInfo'  data-picid="{{item.picId}}"></image>
+      <image bindtap='uploadImg' src='/assets/page/my/pet/petInfo/add-icon.png' class='addimg'></image>
+    </scroll-view>
+  </view>
+
+  <!-- 证件信息 -->
+  <view class='card'>
+    <view class='titile'>证件信息</view>
+    <view class='card-inner' wx:if="{{dogInfos.immuneCard}}">
+      <view class='text-txt'>
+        <text>免疫证号：</text>
+        <text>{{dogInfos.immuneCard.immuneCardNum?dogInfos.immuneCard.immuneCardNum:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>签发机构：</text>
+        <text>{{dogInfos.immuneCard.orgName?dogInfos.immuneCard.orgName:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>签发日期：</text>
+        <text>{{dogInfos.immuneCard.lssueTime?dogInfos.immuneCard.lssueTime:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>有限期限：</text>
+        <text>{{dogInfos.immuneCard.startTime?dogInfos.immuneCard.startTime:'~'+'~'+dogInfos.immuneCard.endTime?dogInfos.immuneCard.endTime:'~'}}</text>
+      </view>
+    </view>
+    <view class='card-inner' wx:else>无免疫证信息</view>
+
+    <view class='card-inner' wx:if="{{dogInfos.dogCard}}">
+      <view class='text-txt'>
+        <text>犬证号：</text>
+        <text>{{dogInfos.dogCard.dogCardNum}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>签发机构：</text>
+        <text>{{dogInfos.dogCard.orgName?dogInfos.dogCard.orgName:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>签发日期：</text>
+        <text>{{dogInfos.dogCard.lssueTime?dogInfos.dogCard.lssueTime:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>有限期限：</text>
+        <text>{{dogInfos.dogCard.startTime?dogInfos.dogCard.startTime:'~'+'~'+dogInfos.dogCard.endTime?dogInfos.dogCard.endTime:'~'}}</text>
+      </view>
+    </view>
+    <view class='card-inner' wx:else>无犬证信息</view>
+
+    <view class='card-inner' wx:if="{{dogInfos.device}}">
+      <view class='text-txt'>
+        <text>项圈编号：</text>
+        <text>{{dogInfos.device.deviceNumber}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>创建时间：</text>
+        <text>{{dogInfos.device.creationTime?dogInfos.device.creationTime:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>出厂日期：</text>
+        <text>{{dogInfos.device.productionTime?dogInfos.device.productionTime:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>启用时间：</text>
+        <text>{{dogInfos.device.startTime?dogInfos.device.startTime:'~'}}</text>
+      </view>
+    </view>
+    <view class='card-inner' wx:else>无项圈信息</view>
+    
+    <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image>
+  </view>
+
+  <!-- 病历记录 -->
+  <view class='card'>
+    <view class='titile'>病历记录</view>
+    <text wx:if='{{dogInfos.therapyList.length==0}}' class='null'>无</text>
+    <view class='card-inner' wx:for="{{dogInfos.therapyList}}" wx:key="{{index}}" wx:if='{{dogInfos.therapyList.length>0}}'>
+      <view class='text-txt'>
+        <text>时间：</text>
+        <text>{{item.creationTime?item.creationTime:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>病历记录：</text>
+        <view class='text-ins-info'>
+          <view>
+            <text>症状：</text>
+            <text>{{item.symptom?item.symptom:'~'}}</text>
+          </view>
+          <view>
+            <text>诊断：</text>
+            <text>{{item.diagnos0e?item.diagnose:'~'}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='text-txt'>
+        <text>治疗：</text>
+        <text>{{item.treatmentInfo?item.treatmentInfo:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>备注：</text>
+        <text>{{item.remarks?item.remarks:''}}</text>
+      </view>
+    </view>
+    <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image>
+  </view>
+
+  <!-- 防疫信息 vaccineList-->
+  <view class='card'>
+    <view class='titile'>防疫信息</view>
+    <text wx:if='{{dogInfos.vaccineList.length==0}}' class='null'>无</text>
+    <view class='card-inner' wx:for="{{dogInfos.vaccineList}}" wx:key="{{index}}" wx:if='{{dogInfos.vaccineList.length>0}}'>
+      <view class='text-txt'>
+        <text>时间：</text>
+        <text>{{item.injectionTime?item.injectionTime:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>项目：</text>
+        <text>{{item.vaccineName?item.vaccineName:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>疫苗厂家及批号：</text>
+        <text>{{item.vaccineName?item.vaccineName:'~'+' - '+item.vaccineNo?item.vaccineNo:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>接种兽医：</text>
+        <text>{{item.name?item.name:''}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>接种单位：</text>
+        <text>{{item.orgName?item.orgName:''}}</text>
+      </view>
+    </view>
+    <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image>
+  </view>
+
+  <!-- 年检信息 -->
+  <view class='card'>
+    <view class='titile'>年检信息</view>
+    <text wx:if='{{dogInfos.inspectionsInfoList.length==0}}' class='null'>无</text>
+    <view class='card-inner' wx:for='{{dogInfos.inspectionsInfoList}}' wx:key='{{index}}' wx:if='{{dogInfos.inspectionsInfoList.length>0}}'>
+      <view class='text-txt'>
+        <text>年检时间：</text>
+        <text>{{item.inspectionsDate?item.inspectionsDate:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>年检结果：</text>
+        <text>{{item.resultType?item.resultType:''}}</text>
+      </view>
+    </view>
+    <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image>
+  </view>
+
+  <!-- 违法信息 -->
+  <view class='card'>
+    <view class='titile'>违法信息</view>
+    <text wx:if='{{dogInfos.violationList.length==0}}' class='null'>无</text>
+    <view class='card-inner' wx:for='{{dogInfos.violationList}}' wx:key='{{index}}' wx:if='{{dogInfos.violationList.length>0}}'>
+      <view class='text-txt'>
+        <text>违法时间：</text>
+        <text>{{item.violationDate?item.violationDate:'~'}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>违法地点：</text>
+        <text>{{item.violationPlace?item.violationPlace:''}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>违法行为：</text>
+        <text>{{item.violation?item.violation:''}}</text>
+      </view>
+      <view class='text-txt'>
+        <text>扣分：</text>
+        <text>{{item.fine?item.fine:'无'}}</text>
+      </view>
+      <!-- 
+      <view class='text-txt'>
+        <text>罚款：</text>
+        <text>{{item.fine}}</text>
+      </view> 
+      -->
+    </view>
+    <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image>
+  </view>
+
+  <text class='botn'>----------- 到底了 -----------</text>
+</view>

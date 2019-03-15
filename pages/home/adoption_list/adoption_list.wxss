@@ -1,0 +1,63 @@
+.dog_tar {
+  
+}
+
+.dog_item {
+  width: 99%;
+  display: flex;
+  height: 270rpx;
+  margin-left: 2rpx;
+  border: 2rpx solid #ccc;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.dog_item image {
+  width: 235rpx;
+  height: 226rpx;
+  margin-left: 20rpx;
+  background-color:#eee;
+}
+
+.dog_item_right {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: rgb(153, 153, 153);
+  margin-left: 40rpx;
+  height: 240rpx;
+  justify-content: space-around;
+  width:439rpx;
+}
+
+.dog_item_name {
+  display: flex;
+  font-size: 16px;
+  color: black;
+}
+
+.dog_item_name text {
+  width: 250rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.dog_item_button {
+  width: 142rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #41c7d6;
+  color: white;
+  font-size: 14px;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+  text-align: center;
+}
+
+.dog_item_body {
+}
+
+.dog_item_cup {
+  margin-left: 30rpx;
+}

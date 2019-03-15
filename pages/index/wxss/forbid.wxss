@@ -1,0 +1,68 @@
+.forbid_tar {
+  display: flex;
+  flex-direction: column;
+}
+
+.forbid_title {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.forbid_title image {
+  width: 172rpx;
+  height: 46rpx;
+  margin-left: 250rpx;
+}
+
+.forbid_body swiper{
+  height: 200rpx;
+  border: solid 1rpx #ddd;
+  margin-bottom:10rpx;
+}
+
+.forbid_title view {
+  margin-left: 240rpx;
+}
+.forbid_item_box{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.forbid_items{
+  display: flex;
+  height: 200rpx;
+}
+.forbid_item {
+  width: 25%;
+  /* height: 176rpx; */
+  height: 100%;
+  display: flex;
+   /*2.设置垂直排列*/
+  flex-direction: column;
+  /*3.设置交叉轴居中*/
+  align-items: center;
+   /*4.设置主轴居中*/
+  justify-content: space-between;
+  font-size: 14px;
+  background-color:#ddd;
+  margin-left:10rpx;
+}
+
+.forbid_item image{
+  width:100%;
+  height:160rpx;
+}
+
+
+.forbid_item text{
+  width: 180rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+}
+.no_forbid_body {
+  display: none
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#49C8D5",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "项圈绑定",
+  "usingComponents": {
+    "i-cell-group": "/components/dist/cell-group/index",
+    "i-cell": "/components/dist/cell/index"
+  }
+}

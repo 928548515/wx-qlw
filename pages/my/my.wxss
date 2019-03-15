@@ -1,0 +1,125 @@
+/* pages/my/my.wxss */
+Page {
+  background-color: #eee;
+  height: 100%;
+}
+
+.top-container {
+  background-color: rgb(70, 200, 213);
+  height: 300rpx;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.tot-img-icon {
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+}
+
+/* 左中 */
+
+.tot-img-icon:nth-of-type(1) {
+  top: 40%;
+  left: 28%;
+}
+
+/* 左上 */
+
+.tot-img-icon:nth-of-type(2) {
+  top: 15%;
+  left: 7%;
+}
+
+/* 左下 */
+
+.tot-img-icon:nth-of-type(3) {
+  bottom: 16%;
+  left: 13%;
+}
+
+/* 右下 */
+
+.tot-img-icon:nth-of-type(4) {
+  bottom: 19%;
+  right: 10%;
+}
+
+/* 右上*/
+
+.tot-img-icon:nth-of-type(5) {
+  top: 21%;
+  right: 12%;
+}
+
+/* 右中 */
+
+.tot-img-icon:nth-of-type(6) {
+  top: 60%;
+  right: 30%;
+}
+
+/* 人图像 */
+
+.top-per-icon {
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+.top-per-icon image {
+  height: 100rpx;
+  width: 100rpx;
+  margin-bottom: 43rpx;
+}
+
+/* 菜单 */
+
+.middle-memus {
+  display: flex;
+  flex-flow: column nowrap;
+  font-size:32rpx;
+  background-color: white;
+}
+
+.memu {
+  height: 87rpx;
+  line-height: 85rpx;
+  border-bottom: solid 1rpx #ddd;
+  display: flex;
+  
+}
+
+.memu>image {
+  width: 85rpx;
+  height: 100%;
+  display: block;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.memu text {
+  width: 600rpx;
+}
+
+.not_login {
+  color: #aaa;
+}
+
+.logout {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color:white;
+  margin-top: 20rpx; 
+}

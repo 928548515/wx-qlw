@@ -1,0 +1,176 @@
+// pages/my/page/bindDeivce/bindDevice.js
+
+const _scanCode = require("../../../../apis/scanCode.js")
+const {
+  asynHttp
+} = require("../../../../apis/request_sync.js")
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    dogInfo: '',
+    deviceNo: '',
+  },
+  inputChanged(e) {
+    this.setData({
+      deviceNo: e.detail.value
+    })
+    console.log(this.data)
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (opt) {
+    const dogInfo = JSON.parse(opt.dogInfo)
+    this.setData({
+      dogInfo
+    })
+  },
+
+  deviceNoChange(e) {
+    this.setData({
+      deviceNo: e.detail.value
+    })
+  },
+  scanCode(e) {
+    _scanCode().then(res => {
+      this.setData({
+        deviceNo: res.result
+      })
+    })
+  },
+  bindDevieConfirm(deviceId) {
+    const dogId = this.data.dogInfo.dogId
+    asynHttp("/dogCard/bindDevice", "post", {
+      DeviceId: deviceId,
+      dogId
+    }).then(res => {
+      console.log(res)
+      if (res.data.meta.success) {
+        wx.showModal({
+          title: '绑定成功',
+          content: '"' + this.data.dogInfo.dogName + '"成功绑定项圈',
+          showCancel: false
+        })
+      }
+    })
+  },
+  bindDevie() {
+    const deviceNo = this.data.deviceNo
+    if (!deviceNo || deviceNo.trim().length < 5) {
+      wx.showToast({
+        title: '请输入正确的项圈编号',
+        icon: 'none'
+      })
+      return;
+    }
+    asynHttp("/dogCard/bindDevice/imei","post",{
+      dogId: this.data.dogInfo.dogId,
+      imei: deviceNo.trim()
+    },null,"正在提交...").then(res=>{
+      if(res.data.meta.success){
+        wx.showModal({
+          title: '绑定成功',
+          content: '“' + this.data.dogInfo.dogName + '”成功绑定项圈!',
+          cancelText: "返回",
+          showCancel: false,
+          success: (res) => {
+            if (res.confirm) {
+              //返回
+              wx.navigateBack({
+                delta: 1
+              })
+            }
+          }
+        })
+      }else{
+        let msg = "绑定失败！";
+        if(res.data.meta.message){
+          msg = res.data.meta.message;
+        }
+        wx.showModal({
+          title: '绑定失败',
+          content: msg,
+          showCancel: false
+        })
+      }
+      console.log(res)
+    })
+    return
+    asynHttp(`/dogCard/deviceBandInfo/${this.data.deviceNo}`)
+      .then(res => {
+        if (res.data.meta.success) {
+          const deviceId = res.data.data.tDevice.deviceId;
+          if (res.data.data.tDeviceRefDog && res.data.data.tDeviceRefDog.length > 0) {
+            wx.showModal({
+              title: '解绑确认',
+              content: '此设备已经被绑定，是否更换绑定犬只 ?',
+              success: (conf) => {
+                if (conf.confirm) { //确定替换
+                  this.bindDevieConfirm(deviceId);
+                }
+              }
+            })
+          } else {
+            this.bindDevieConfirm(deviceId);
+          }
+        } else {
+          wx.showToast({
+            title: '次项圈编号不存在或已经绑定，请输入正确的项圈编号！',
+            duration: 2500,
+            icon: 'none'
+          })
+        }
+      })
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

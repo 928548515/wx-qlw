@@ -1,0 +1,35 @@
+<!--pages/my/page/pet/pet.wxml-->
+<!-- nav -->
+<!-- <top-nav name="我的宠物" callbackUrl='/pages/my/my' /> -->
+
+<!-- 内容 -->
+<view class='conainer' wx:if="{{ ishasData }}">
+  <navigator class='dog-item' url="./petInfo/petInfo{{'?dogId='+item.dogId}}" data-id="{{index}}" bindtap='saveDogOwnerInfo'  wx:for="{{dogInfos}}" wx:key="{{index}}" wx:if='{{pageSize > index}}'>
+    <image src='{{item.url ? item.url:"/assets/page/my/pet/dog-titile.png"}}' class="dog-pic"></image>
+    <view class='info'>
+      <view class='basic-infos'>
+        <text class='lint-one'>{{item.dogName}}</text>
+        <text>积分</text>
+        <text>{{item.sum?item.sum:0}}</text>
+      </view>
+      <view class='age-infos'>
+        <text>{{item.breed}}</text>
+        <text>{{item.dogAge?item.dogAge+"岁":''}}</text>
+        <text>{{item.colour}}</text>
+      </view>
+      <view class='date-infos'>
+        <text wx:if="{{item.endTimeStatus}}">{{item.dogCardNum?"犬证过期":"无犬证"}}</text>
+        <text wx:if="{{item.imendTimeStatus}}">{{item.immuneCardNum?"年检超期":"无免疫证"}}</text>
+      </view>
+    </view>
+    <view class='status'>
+      <text class="isExpire {{item.status == 3 ? 'expire':''}}">正常在册</text>
+      <view class='stateClid {{item.status==0?"bgceee":""}}'>
+        <view wx:if="{{item.status == 0}}" data-item='{{item}}' catchtap='toUnBindDevice'>项圈解绑</view>
+        <view class='bindDevie' catchtap='toDevice' data-item='{{item}}' wx:else>项圈绑定</view>
+      </view>
+    </view>
+  </navigator>
+</view>
+<!-- 没有数据展示 -->
+<no-data wx:if="{{ !ishasData}}"></no-data>

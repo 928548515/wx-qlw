@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "top-nav": "/pages/components/pages/nav/nav"
+  },
+  "navigationBarBackgroundColor": "#49C8D5",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的"
+}

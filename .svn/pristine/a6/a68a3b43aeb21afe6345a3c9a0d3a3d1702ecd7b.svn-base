@@ -1,0 +1,135 @@
+<!--轮播图分区-->
+<view class='slider'>
+  <swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval='5000' duration='1000'>
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image src='{{item}}' class="slide-image"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 资讯导航栏 -->
+<view class='Information_tar'>
+  <block wx:for="{{Informations}}" wx:key="index">
+    <navigator class='Information' url="/pages/home/information/information?Info_type={{ item.Info_type }}&infoTitle= {{item.text}}">
+      <image src='{{ item.imgurl }}'></image>
+      <text>{{ item.text }}</text>
+    </navigator>
+  </block>
+</view>
+
+<!-- 新增内容 办理证 项圈选购 -->
+<view class='line' bindtap="()=>{console.log(e)}"></view>
+<view class='bizHandle'>
+  <navigator url='/pages/dogcardHandle/dogCardHandle'>
+    <image src='/assets/dogs/to-card-icon.png'></image>
+    <text>犬证申办</text>
+  </navigator>
+  <navigator url='' bindtap='noneBiz'>
+    <image src='/assets/dogs/to-device-icon.png'></image>
+    <text>项圈选购</text>
+  </navigator>
+</view>
+
+<!-- 分隔类 -->
+<view class='divier'></view>
+
+<!-- 领养导航 -->
+<view class='adopt_tar'>
+  <view class='adopt_title'>
+    <view></view>
+    <image src='{{ titles.adopt_title }}'></image>
+    <!-- 跳转路径 -->
+    <view class="more arrow" bindtap='ToAdoptdogs'>更多</view>
+  </view>
+  <view class="{{ ishasAdoptdogs?'adopt_items':'nothas_adopt_items' }}">
+    <swiper indicator-dots='{{ false }}' autoplay='{{autoplay}}' interval='5000' duration='1000'>
+      <!--获取轮播图轮次-->
+      <block wx:for="{{ adoptcounts }}" wx:for-item="i" wx:key="index">
+        <swiper-item class="adoptItems">
+          <view bindtap='ToAdoptdogInfo' data-index='{{ j }}' class='adoptItem' wx:for="{{ adoptdogs }}" wx:key="j" wx:for-index="j" wx:if="{{  j<10*i && j>=10*(i-1)  }}">
+            <image src='{{ item.thumbnailUrl?item.thumbnailUrl:"/assets/dogs/example-dog.png" }}'></image>
+            <view class='adopt_desc'>
+              <text class='adopt_name'>{{ item.dogName }}</text>
+              <text class='adopt_color'>{{ item.dogColor}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+<!-- 分隔类 -->
+<view class='divier'></view>
+
+<!--服务网点-->
+<view class='serviceSite_tar'>
+  <!-- 服务网点标题 -->
+  <view class='serviceSite_title'>
+    <view></view>
+    <image src='{{ titles.serviceSite_title }}'></image>
+    <!-- 更多组 -->
+    <view class='serviceSite_title_more'>
+      <image src='{{ icons.addressIcon }}'></image>
+      <!-- 跳转路径 -->
+      <view class='arrow' bindtap='ToServiceSites'>更多</view>
+    </view>
+  </view>
+  <!--服务网点item-->
+  <view class="{{  ishasServiceSites?'serviceSites':'no_serviceSites'}}">
+    <block wx:for="{{ serviceSites }}" wx:key="index" wx:if="{{ index<3 }}">
+      <navigator class='serviceSite_item' url='/pages/my/page/appointment/service-detail/service-detail?id={{item.organizationId}}'>
+        <view>
+          <image src='{{ item.imgUrl }}'></image>
+        </view>
+        <!-- 详情 -->
+        <view class='serviceSite_desc'>
+          <view class='serviceSite_name'>
+            <text class='titile'>{{ item.organizationName }}</text>
+            <view catchtap='ToAppointmentPage' class='appointment' data-index='{{ index }}'>预 约</view>
+          </view>
+          <view class='serviceSite_phone'>
+            <image src='{{ icons.phoneIcon }}'></image>
+            <text>{{ item.fixedPhone?item.fixedPhone:item.phone }}</text>
+          </view>
+          <view class='serviceSite_address'>
+            <image src='{{ icons.addressIcon }}'></image>
+            <text>{{ item.distance?item.distance:'~' }} | {{item.address}}</text>
+          </view>
+        </view>
+      </navigator>
+      <view class='divier_write'></view>
+    </block>
+  </view>
+</view>
+
+<!-- 分隔类 -->
+<view class='divier'></view>
+<!-- 禁养品种 -->
+<view class='forbid_tar'>
+  <!--  -->
+  <view class='forbid_title'>
+    <image src='{{ titles.forbid_title  }}'></image>
+    <!-- 跳转路径 -->
+    <view class='arrow' bindtap="Toforbid_dogs">更多</view>
+  </view>
+  <!-- 禁养内容 -->
+  <view class="{{ isforbidDog?'forbid_body':'no_forbid_body' }}">
+    <swiper indicator-dots='{{false}}' autoplay='{{autoplay}}' interval='5000' duration='1000'>
+      <!--获取轮播图轮次-->
+      <block wx:for="{{ counts }}" wx:for-item="i" wx:key="index">
+        <swiper-item class="forbid_items">
+          <view catchtap='tobanDetail' data-item='{{item}}' class='forbid_item' wx:for="{{ forbid_dogs }}" wx:key="j" wx:for-index="j" wx:if="{{  j<4*i && j>=4*(i-1)  }}">
+            <image src='{{ item.tImages[0].thumbnailUrl }}'></image>
+            <text>{{ item.tDictionary.dictionaryDescribe }}</text>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+<!-- 底部分割 -->
+<view class='foot_tar'>
+  <text>到底啦</text>
+</view>

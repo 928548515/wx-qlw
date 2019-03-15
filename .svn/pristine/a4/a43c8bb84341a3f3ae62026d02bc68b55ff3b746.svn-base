@@ -1,0 +1,46 @@
+/* pages/home/notice/notice.wxss */
+
+page {
+  background-color: #eee;
+}
+
+.notice_item {
+  height: 200rpx;
+  display: flex;
+  background-color: white;
+}
+
+.notice_item image {
+  width: 266rpx;
+  height: 176rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+
+.notice_item_right {
+  font-size: 14px;
+  width: 434rpx;
+  padding: 20rpx 10rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+}
+
+.notice_item_title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  line-height:29rpx;
+}
+
+.notice_item_remarks {
+  font-size: 12px;
+  color: rgb(153, 153, 153);
+}
+
+.notice_item_date {
+  margin-top: 10rpx;
+}

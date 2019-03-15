@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#49C8D5",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "密码修改",
+  "usingComponents": {
+    "i-cell-group": "/components/dist/cell-group/index",
+    "i-cell": "/components/dist/cell/index",
+    "i-icon": "/components/dist/icon/index",
+    "i-button": "/components/dist/button/index",
+    "i-message": "/components/dist/message/index"
+  }
+}

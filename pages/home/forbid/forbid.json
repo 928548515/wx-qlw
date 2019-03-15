@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "not-login": "/components/notLogin/notLogin",
+    "no-data": "/components/noData/noData"
+  },
+  "navigationBarBackgroundColor": "#49C8D5",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "禁养犬种"
+}

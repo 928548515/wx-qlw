@@ -1,0 +1,38 @@
+<!--pages/my/page/logout/logout.wxml-->
+<view class='container' wx:if="{{ ishasData }}">
+<!-- 
+  <navigator class='item' url='./logoutInfo/logoutInfo{{"?dogId="+item.dogId}}'>
+    <image class='pic' src='/assets/page/my/appoitment/phone-icon.png'></image>
+    <view class='content'>
+      <text>小黑</text>
+      <view class='info'>
+        <text>金毛</text>
+        <text>2岁</text>
+        <text></text>
+      </view>
+    </view>
+    <view class='btns'>
+      <text class='but-1'>正常在册</text>
+      <text class='logout-btn'>注销申请</text>
+    </view>
+  </navigator>
+   -->
+  <navigator class='item' url='../pet/petInfo/petInfo{{"?dogId=" + item.dogId}}' wx:for='{{dogInfos}}' wx:key='{{index}}' wx:if='{{maxLength>index}}'>
+    <image class='pic' src='{{item.url?item.url:"/assets/page/my/pet/petInfo/dog-none-example.png"}}'></image>
+    <view class='content'>
+      <text>{{item.dogName}}</text>
+      <view class='info'>
+        <text>{{item.breed}}</text>
+        <text>{{item.dogAge?item.dogAge+"岁":''}}</text>
+        <text>{{item.colour?item.colour:''}}</text>
+      </view>
+    </view>
+    <view class='btns'>
+      <text class='but-1 {{item.status == 3 ? "uonLine":"onLine"}}'>{{item.status == 3 ? '已注销':'正常在册'}}</text>
+      <text class='logout-btn {{item.status == 3 ? "logout":"ulogout"}}' data-id="{{ item }}" catchtap='logoutInfo' >{{item.status == 3 ? '查询详情':'注销申请'}}</text>
+    </view>
+  </navigator>
+</view>
+
+<!-- 没有数据展示 -->
+<no-data wx:if="{{ !ishasData}}"></no-data>

@@ -1,0 +1,221 @@
+<!--pages/dogcardHandle/dogCardHandle.wxml-->
+<view class='container'>
+  <form bindsubmit="submit">
+    <!-- 导航条 -->
+    <view class='titile-for'>
+      <image src='/assets/dogcardHandle/to-right.png' class='animation'></image>
+      <i-steps class="steps">
+        <i-step status="process">
+          <view slot="title">
+            <image src='/assets/dogcardHandle/apply-fo-01.png'></image>
+          </view>
+          <view slot="content">养犬人提交申请</view>
+        </i-step>
+        <i-step status="wait">
+          <view slot="title">
+            <image src='/assets/dogcardHandle/apply-fo-02.png'></image>
+          </view>
+          <view slot="content" icon="camera">办证机构审批</view>
+        </i-step>
+        <i-step status="wait">
+          <view slot="title">
+            <image src='/assets/dogcardHandle/apply-fo-03.png'></image>
+          </view>
+          <view slot="content">审批完成(结束)</view>
+        </i-step>
+      </i-steps>
+    </view>
+
+    <!-- 导航条 -->
+    <!-- <view class='titile-for'>
+    <image src='/assets/dogcardHandle/to-right.png' class='animation'></image>
+    <view>
+      <image src='/assets/dogcardHandle/apply-fo-01.png'></image>
+      <text>养犬人提交申请</text>
+    </view>
+    <view>
+      <image src='/assets/dogcardHandle/apply-fo-02.png'></image>
+      <text>办证机构审批</text>
+    </view>
+    <view>
+      <image src='/assets/dogcardHandle/apply-fo-03.png'></image>
+      <text>审批完成(结束)</text>
+    </view>
+  </view> -->
+
+    <!-- 办证信息 -->
+    <view class='panel'>
+      <view class='tit'>
+        <text>办证信息</text>
+        <image src='/assets/dogcardHandle/to-buttom.png'></image>
+      </view>
+      <view class='item {{dogInfo?"":"search"}}'>
+        <text>免疫证号：<text class='text'> *</text></text>
+        <input placeholder='请输入免疫证号码' placeholder-class="plStayle" bindinput="inputChange" bindconfirm="searchInfo" value="{{input}}" disabled="{{dogInfo}}"></input>
+        <!-- <image src='/assets/dogcardHandle/search.png' class='search-png' bindtap='searchInfo'></image> -->
+      </view>
+      <view class='item {{dogInfo?"":"search"}}'>
+        <text>犬主姓名：<text class='text'> *</text></text>
+        <input placeholder='请输入用户名' placeholder-class="plStayle" bindinput="nameChange" value="{{nameInput}}" disabled="{{dogInfo}}"></input>
+      </view>
+      <view class='item {{dogInfo?"":"search"}}'>
+        <text>犬主电话：<text class='text'> *</text></text>
+        <input disabled="{{dogInfo}}" placeholder='请输入电话号码' placeholder-class="plStayle" bindinput="phoneChange" value="{{phoneInput}}"></input>
+      </view>
+      <view class='item {{dogInfo?"":"search"}}'>
+        <text>证件类型：<text class='text'> *</text></text>
+        <picker disabled="{{dogInfo}}" name="cradType" value='{{pickerInputCardType.index}}' range='{{pickerInputCardType.array}}' bindchange='pickerCardTypeInputChanged' class="{{dogInfo.tImmuneCard?'changeinput':''}}">
+          {{pickerInputCardType.array[pickerInputCardType.index]}}
+          <view class='selectd'>
+            <image src='/assets/dogcardHandle/picker-select.png' class='pickerImg'></image>
+          </view>
+        </picker>
+      </view>
+      <view class='item {{dogInfo?"":"search"}}'>
+        <text>证件号码：<text class='text'> *</text></text>
+        <input disabled="{{dogInfo}}" placeholder='请输入证件号码' placeholder-class="plStayle" bindinput="cardChange" value="{{cardInput}}"></input>
+      </view>
+    </view>
+    <view class='btns' wx:if="{{!dogInfo}}">
+      <button class='submit' bindtap='searchInfo'>下一步</button>
+      <button bindtap='reset'>重 置</button>
+    </view>
+
+    <!-- 犬主信息 -->
+    <view class='panel dogOwner' wx:if="{{dogInfo}}">
+      <view class='tit'>
+        <text>犬主信息</text>
+        <image src='/assets/dogcardHandle/to-buttom.png'></image>
+      </view>
+      <view class='item'>
+        <text>联系电话:<text class='text'> *</text></text>
+        <input disabled value='{{dogInfo.tDogOwner.dogOwnerPhone}}' disabled name="phone"></input>
+      </view>
+      <view class='item'>
+        <text>犬主姓名:</text>
+        <input value='{{dogInfo.tDogOwner.dogOwnerName}}' name="dogOwnerName" disabled="{{!dogInfo.tImmuneCard}}" class="{{dogInfo.tImmuneCard?'changeinput':''}}"></input>
+      </view>
+      <view class='item'>
+        <text>性别:</text>
+        <picker name='sex' value='{{pickerSex.index}}' range='{{pickerSex.array}}' bindchange='pickerSexChanged' disabled="{{!dogInfo.tImmuneCard}}" class="{{dogInfo.tImmuneCard?'changeinput':''}}">
+          {{pickerSex.array[pickerSex.index]}}
+          <view class='selectd'>
+            <image src='/assets/dogcardHandle/picker-select.png' class='pickerImg'></image>
+          </view>
+        </picker>
+        <!-- <input value='{{dogInfo.tDogOwner.sex==0?"男":dogInfo.tDogOwner.sex==1?"女":""}}' name="sex" disabled="{{!dogInfo.tImmuneCard}}" class="{{dogInfo.tImmuneCard?'changeinput':''}}"></input> -->
+      </view>
+      <view class='item'>
+        <text>民族:</text>
+        <picker name="ethnic" value='{{pickerEthnic.index}}' range='{{pickerEthnic.array}}' disabled="{{!dogInfo.tImmuneCard}}" bindchange='pickerEthnicChanged' class="{{dogInfo.tImmuneCard?'changeinput':''}}">
+          {{pickerEthnic.array[pickerEthnic.index]}}
+          <view class='selectd'>
+            <image src='/assets/dogcardHandle/picker-select.png' class='pickerImg'></image>
+          </view>
+        </picker>
+        <!-- <input value='{{dogInfo.tDogOwner.ethnic}}' name="ethnic" disabled="{{!dogInfo.tImmuneCard}}" class="{{dogInfo.tImmuneCard?'changeinput':''}}"></input> -->
+      </view>
+      <view class='item'>
+        <text>出生日期:</text>
+        <picker mode="date" name='birthDate' value="{{pickerBirthDate}}" bindchange='pickerBirthDateChange' class="{{dogInfo.tImmuneCard?'changeinput':''}}">{{pickerBirthDate}}
+          <view class='selectd'>
+            <image src='/assets/dogcardHandle/picker-select.png' class='pickerImg'></image>
+          </view>
+        </picker>
+        <!-- <input value='{{dogInfo.tDogOwner.birthDate}}' name="birthDate" disabled="{{!dogInfo.tImmuneCard}}" class="{{dogInfo.tImmuneCard?'changeinput':''}}"></input> -->
+      </view>
+      <view class='item'>
+        <text>证件类型:</text>
+        <picker name="cradType" value='{{pickerCardType.index}}' range='{{pickerCardType.array}}' bindchange='pickerCardTypeChanged' class="{{dogInfo.tImmuneCard?'changeinput':''}}">
+          {{pickerCardType.array[pickerCardType.index]}}
+          <view class='selectd'>
+            <image src='/assets/dogcardHandle/picker-select.png' class='pickerImg'></image>
+          </view>
+        </picker>
+        <!-- <input value='{{dogInfo.tDogOwnerCardVo[0].ownerCardTypeic.dictionaryDescribe}}' name="ownerCardTypeic" disabled="{{!dogInfo.tImmuneCard}}" class="{{dogInfo.tImmuneCard?'changeinput':''}}"></input> -->
+      </view>
+      <view class='item'>
+        <text>证件号码:</text>
+        <input value='{{dogInfo.tDogOwnerCardVo[0].cardNum}}' name="cardNum" disabled="{{!dogInfo.tImmuneCard}}" class="{{dogInfo.tImmuneCard?'changeinput':''}}"></input>
+      </view>
+
+      <view class='item'>
+        <text>电子邮箱:</text>
+        <input value='{{dogInfo.tDogOwner.eMail}}' name="eMail" disabled="{{!dogInfo.tImmuneCard}}" class="{{dogInfo.tImmuneCard?'changeinput':''}}"></input>
+      </view>
+      <view class='item'>
+        <text>所属街道:</text>
+        <input value='{{dogInfo.tDogOwner.community}}' name="community" disabled="{{!dogInfo.tImmuneCard}}" class="{{dogInfo.tImmuneCard?'changeinput':''}}"></input>
+      </view>
+      <view class='item'>
+        <text>详细地址:</text>
+        <input value='{{dogInfo.tDogOwner.address}}' name="address" disabled="{{!dogInfo.tImmuneCard}}" class="{{dogInfo.tImmuneCard?'changeinput':''}}"></input>
+      </view>
+      <view class='item'>
+        <text>半身照:<text class='text'> *</text></text>
+        <scroll-view scroll-x class='scroll'>
+          <!-- <image src='{{dogInfo.dogOwners.thumbnailUrl}}' bindtap='viewPersonBigPic' data-index='{{index}}'></image> -->
+          <image src='{{item.tImages.thumbnailUrl}}' bindlongpress='delImage' data-type='1' data-picid='{{item.tImages.imageId}}' wx:for="{{dogInfo.halfPics}}" wx:key="{{index}}" bindtap='viewhalfBigPic' data-index='{{index}}'></image>
+          <image src='/assets/dogcardHandle/add_img-icon.png' class='addimg' bindtap='uploadImg' data-type='11' wx:if="{{dogInfo.tImmuneCard}}"></image>
+        </scroll-view>
+      </view>
+      <view class='item'>
+        <text>身份证正面:<text class='text'> *</text></text>
+        <scroll-view scroll-x class='scroll'>
+          <!-- <image src='{{dogInfo.dogOwners.thumbnailUrl}}' bindtap='viewPersonBigPic' data-index='{{index}}'></image> -->
+          <image src='{{item.tImages.thumbnailUrl}}' bindlongpress='delImage' data-type='2' data-picid='{{item.tImages.imageId}}' wx:for="{{dogInfo.frontPics}}" wx:key="{{index}}" bindtap='viewfrontBigPic' data-index='{{index}}'></image>
+          <image src='/assets/dogcardHandle/add_img-icon.png' class='addimg' bindtap='uploadImg' data-type='12' wx:if="{{dogInfo.tImmuneCard}}"></image>
+        </scroll-view>
+      </view>
+      <view class='item'>
+        <text>身份证背面:<text class='text'> *</text></text>
+        <scroll-view scroll-x class='scroll'>
+          <!-- <image src='{{dogInfo.dogOwners.thumbnailUrl}}' bindtap='viewPersonBigPic' data-index='{{index}}'></image> -->
+          <image src='{{item.tImages.thumbnailUrl}}' bindlongpress='delImage' data-type='3' data-picid='{{item.tImages.imageId}}' wx:for="{{dogInfo.rearPics}}" wx:key="{{index}}" bindtap='viewrearPicsBigPic' data-index='{{index}}'></image>
+          <image src='/assets/dogcardHandle/add_img-icon.png' class='addimg' bindtap='uploadImg' data-type='13' wx:if="{{dogInfo.tImmuneCard}}"></image>
+        </scroll-view>
+      </view>
+    </view>
+
+    
+    <!-- 犬只信息 -->
+    <view class='panel' wx:if="{{dogInfo}}">
+      <view class='tit'>
+        <text>犬只信息</text>
+        <image src='/assets/dogcardHandle/to-buttom.png'></image>
+      </view>
+      <view class='item'>
+        <text>犬名:</text>
+        <input disabled value='{{dogInfo.tDogInfo.dogName}}'></input>
+      </view>
+      <view class='item'>
+        <text>品种:</text>
+        <input disabled value='{{dogInfo.dogBreedType.dictionaryDescribe}}'></input>
+      </view>
+      <view class='item'>
+        <text>性别:</text>
+        <input disabled value='{{dogInfo.tDogInfo.dogGender==0?"雄":dogInfo.tDogInfo.dogGender==1?"雌":""}}'></input>
+      </view>
+      <view class='item'>
+        <text>犬龄:</text>
+        <input disabled value='{{dogInfo.tDogInfo.age?dogInfo.tDogInfo.age+"岁":""}}'></input>
+      </view>
+      <view class='item'>
+        <text>毛色:</text>
+        <input disabled value='{{dogInfo.dogColorType.dictionaryDescribe}}'></input>
+      </view>
+      <view class='item'>
+        <text>照片:</text>
+        <scroll-view scroll-x class='scroll'>
+          <image src='{{item.tImages.thumbnailUrl}}' wx:for="{{dogInfo.tDogInfoImages}}" wx:key="{{index}}" bindtap='viewDogBigPic' data-index='{{index}}'></image>
+          <!-- <image src='/assets/dogs/example-dog.png' bindtap='viewDogBigPic'></image> -->
+        </scroll-view>
+      </view>
+    </view>
+    <view class='btns' wx:if="{{dogInfo}}">
+      <button form-type="submit" class='submit'>申请办证</button>
+      <button bindtap='reset'>重 置</button>
+    </view>
+    <i-load-more loading="{{ false }}" tip="到底了" wx:if="{{dogInfo}}" />
+  </form>
+</view>

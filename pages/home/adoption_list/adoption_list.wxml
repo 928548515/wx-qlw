@@ -1,0 +1,26 @@
+<view wx:if="{{ ishasData }}">
+  <view class='dog_tar'>
+    <block wx:for="{{ adoptdogs }}" wx:key="index" wx:if='{{index<maxLength}}'>
+      <view class='dog_item'>
+        <image src='{{ item.thumbnailUrl  }}'></image>
+        <view class='dog_item_right'>
+          <view class='dog_item_name'>
+            <text>{{ item.dogName }}</text>
+            <view class='dog_item_button' bindtap='ToAdoptDog' data-index='{{ index }}'>领养申请</view>
+          </view>
+          <view class='dog_item_body'>
+            <text>品种：{{ item.dogBreed }}</text>
+            <text class='dog_item_cup'>性别：{{ item.dogGender==0?'雄':'雌' }}</text>
+          </view>
+          <view class='dog_item_body'>
+            <text>犬龄：{{ item.dogAge?item.dogAge+" 岁":"~" }}</text>
+            <text class='dog_item_cup'>毛色：{{ item.dogColor }}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <i-load-more tip="到底了" loading="{{ false }}" wx:if="{{params.totalCount == adoptdogs.length && params.totalCount > params.pageSize}}" />
+  </view>
+</view>
+<!-- 没有数据展示 -->
+<no-data wx:if="{{ !ishasData }}"></no-data>

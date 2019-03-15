@@ -1,0 +1,31 @@
+<!--pages/my/page/logout/logoutInfo/logoutInfo.wxml-->
+<form bindsubmit='formSubmit'>
+<view class='container'>
+    <view class='reason'>
+      <text>注销原因：</text>
+      <picker class='inner' bindchange="bindPickerChange" range='{{logoutRs.logoutReason}}' value='{{index}}'>
+        {{logoutRs.logoutReason[logoutRs.logoutReasonIndex]}}
+      </picker>
+    </view>
+    <view class='textarea'>
+      <text>备注：</text>
+      <textarea class='inner' name="inner">
+      </textarea>
+    </view>
+    <!-- 
+    <view class='input-code'>
+      <text >验证码：</text>
+      <view class='inner code'>
+        <input value='{{yzmPic}}' placeholder='请输入.' id='input_yzm' bindblur='mathPic' >{{yzmPic}}</input>
+        <text bindtap='getYxmPic'>点击获取</text>
+      </view>
+    </view>
+     -->
+    <view class='btns'>
+      <button formType="submit" class='btn-sum'>提交</button>
+      <text bindtap='reset'>返回</text>
+    </view>
+</view>
+
+
+</form>

@@ -1,0 +1,92 @@
+/* pages/my/page/logout/logout.wxss */
+page{
+  background-color: #eee;
+}
+.container{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.item:not(:first-child){
+  margin-top: 20rpx;
+}
+.item{
+  background-color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  height: 170rpx; 
+  width: 100%;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+.pic{
+  height: 100%;
+  width: 170rpx;
+  background-color: #ccc;
+  display: inline-block;
+  margin-right: 30rpx;
+}
+.content{
+  display: flex;
+  flex-flow:  column nowrap;
+  /* justify-content: center; */
+  /* line-height: 80rpx; */
+  font-size: 31rpx;
+  width:310rpx;
+  justify-content: space-around;
+}
+.info{
+  font-size: 28rpx;
+  color: #aaa;
+  display: flex;
+  flex-flow: row wrap;
+  line-height:28rpx;
+  
+}
+.info text{
+  white-space:nowrap;
+}
+.info text:nth-child(2){
+  margin: 0 20rpx;
+}
+.btns{
+  margin-left: auto;
+  display:flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
+.btns>text{
+  height: 35rpx;
+  line-height:35rpx;
+}
+.but-1{
+  color: rgb(19, 153, 24);
+}
+.logout-btn{
+  background-color: #49C8D5;
+  border-radius: 15rpx;
+  padding: 10rpx 15rpx;
+  margin-top: 15rpx;
+}
+/* 在册 */
+
+.onLine{
+  color:  rgb(19, 153, 24);
+}
+.ulogout{
+  background-color: #49C8D5;
+  color:  #FFF;
+}
+
+/* 已注销 */
+.uonLine{
+  color:  #FD6459
+}
+.logout{
+  background-color: #fff;
+  color:  #49C8D5;
+  border: solid 1rpx  #49C8D5;
+}

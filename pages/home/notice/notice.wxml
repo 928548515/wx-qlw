@@ -1,0 +1,24 @@
+<!--服务指南-->
+ 
+<view>
+  <block wx:for="{{ notice }}" wx:key="index">
+  <view class='divier'></view>
+      <view class='notice_item'>
+          <image src='{{ item.imgUrl }}'></image>
+          <view class='notice_item_right'>
+              <text class='notice_item_title'>{{ item.title }}</text>
+              <view class='notice_item_remarks'>
+                  <view class='notice_item_source'>
+                      <text>来源：</text>
+                      <text>{{ item.source }}</text>
+                  </view>
+                  <view class='notice_item_date'>
+                      <text>发布时间：</text>
+                      <text>{{ item.date }}</text>
+                  </view>
+              </view>
+          </view>
+      </view>
+  </block>
+
+</view>

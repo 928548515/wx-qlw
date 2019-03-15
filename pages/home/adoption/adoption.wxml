@@ -1,0 +1,108 @@
+<!--pages/home/adoption-2/adoption.wxml-->
+<view class='container'>
+  <view class='item'>
+    <view class='titile'>基本信息</view>
+    <view class='content'>
+      <view class='left'>
+        <view>
+          <text>犬名：</text>
+          <text>{{ adoptdog_index.dogName }}</text>
+        </view>
+        <view>
+          <text>品种：</text>
+          <text>{{ adoptdog_index.dogBreed }}</text>
+        </view>
+        <view>
+          <text>性别：</text>
+          <text>{{adoptdog_index.dogGender == 0?'雄':'雌' }}</text>
+        </view>
+        <view>
+          <text>犬龄：</text>
+          <text>{{ adoptdog_index.dogAge?adoptdog_index.dogAge+" 岁":"" }}</text>
+        </view>
+        <view>
+          <text>毛色：</text>
+          <text>{{ adoptdog_index.dogColor }}</text>
+        </view>
+        <view>
+          <text>特点：</text>
+          <text>{{ adoptdog_index.dogCharacter?adoptdog_index.dogCharacter:'' }}</text>
+        </view>
+        <view>
+          <text>备注：</text>
+          <text>{{ adoptdog_index.remarks?adoptdog_index.remarks:'无' }}</text>
+        </view>
+      </view>
+      <view class='right'>
+        <image src='{{ adoptdog_index.thumbnailUrl }}'></image>
+      </view>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <!-- 隐藏栏目 -->
+      <input hidden='{{ true }}' name="collectionId">{{ adoptdog_index.collectionId }}</input>
+      <input hidden='{{ true }}' name="dogPublicityId">{{ adoptdog_index.adoptionPublicityId }}</input>
+      <input hidden='{{ true }}' name="operatorId">{{ user.userId }}</input>
+    <view class='item2'>
+      <view class='titile'>领养人信息</view>
+      <view class='content2'>
+        <view>
+          <view>姓名：<text class='text-warn'>*</text></view>
+          <view>
+            <input name="applyerName"></input>
+          </view>
+        </view>
+        <view>
+          <view>性别：<text class='text-warn'>*</text></view>
+          <view>
+            <picker bindchange='bindSexChange' value="{{sexIndex}}" range='{{ adopter.sex}}' name="applyerSex">
+            <view class='picker drop-down'>
+              {{ adopter.sex[sexIndex] }}
+            </view>
+          </picker>
+          </view>
+        </view>
+        <view>
+          <view>证件类型:</view>
+          <view>
+            <picker bindchange='bindCardChange' value='{{ cardTypeIndex }}' range='{{ adopter.card_type }}' name="cardType">
+              <view class='picker drop-down'>
+                {{ adopter.card_type[cardTypeIndex] }}
+              </view>
+              <!-- <image class='down_select' src='/assets/icon/down-icon.png'></image> -->
+            </picker>
+          </view>
+        </view>
+        <view>
+          <view>证件号码:<text class='text-warn'>*</text></view>
+          <view>
+            <input name="cardNumber"></input>
+          </view>
+        </view>
+        <view>
+          <view>养犬地址:</view>
+          <view>
+            <textarea name="adoptionAddress"></textarea>
+          </view>
+        </view>
+        <view>
+          <view >联系电话:<text class='text-warn'>*</text></view>
+          <view>
+            <input name="applyerPhone" bindinput="checkPhoneNumber"></input>
+          </view>
+        </view>
+        <!-- <view>
+        <view>验证码:</view>
+        <view>
+          <input name="identifying_code"></input>
+          <button  disabled='{{ disabled }}' bindtap='getCode'>{{ time }}</button>
+        </view>
+      </view> -->
+      </view>
+    </view>
+    <view class='item3'>
+      <button form-type='submit'>提交申请</button>
+      <button form-type='reset'>重  置</button>
+    </view>
+  </form>
+</view>

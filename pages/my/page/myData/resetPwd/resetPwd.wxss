@@ -1,0 +1,37 @@
+/* pages/my/page/myData/resetPwd/resetPwd.wxss */
+.container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.list{
+  width:100vw;
+  position: absolute;
+  top: 10rpx;
+  left: 0rpx;
+}
+input{
+  border-bottom: solid 1rpx #ddd;
+  text-align: left;
+  padding-left: 10rpx;
+  width:400rpx;
+}
+.container>view{
+  width: 100%;
+}
+.info{
+  height: 342rpx;
+}
+.btns{
+  display: flex;
+}
+.btns button{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  width: 200rpx;
+}
+.btns button:first-child{
+  background-color: #49C8D5;
+  color: #fff;
+}

@@ -1,0 +1,36 @@
+<!--pages/message/message-detail/message-detail.wxml-->
+<view class='container'>
+  <view class='item'>
+    <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image>
+    <view class='titile'>消息详情</view>
+    <view class='content'>
+      <view class='view-txt'>
+        <view>消息类型：</view>
+        <view>
+          {{noticeDetail.notifType==1?"免疫通知": noticeDetail.notifType==2?"预约通知": noticeDetail.notifType==3?"喂药通知": noticeDetail.notifType==4?"领养通知": noticeDetail.notifType==5?"领养通知": noticeDetail.notifType==6?"低电告警": noticeDetail.notifType==7?"进入禁养区通知":noticeDetail.notifType==8?"审核通知":"其他通知"}}
+        </view>
+      </view>
+      <view class='view-txt'>
+        <view>消息主题：</view>
+        <view>{{noticeDetail.notifTitle?noticeDetail.notifTitle:""}}</view>
+      </view>
+      <view class='view-txt'>
+        <view>消息状态：</view>
+        <view>{{noticeDetail.status==0?"未读":noticeDetail.status==1?"已读":"已被删除"}}</view>
+      </view>
+      <view class='view-txt'>
+        <view>消息产生时间：</view>
+        <view>{{noticeDetail.creationTime?noticeDetail.creationTime:""}}</view>
+      </view>
+      <view class='view-txt'>
+        <view>发送人：</view>
+        <view>{{noticeDetail.senderUser.name?noticeDetail.senderUser.name:""}}</view>
+      </view>
+      <view class='view-txt'>
+        <view>消息内容：</view>
+        <view>{{noticeDetail.notiContent?noticeDetail.notiContent:"无"}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

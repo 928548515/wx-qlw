@@ -1,0 +1,166 @@
+/* pages/dogcardHandle/dogCardHandle.wxss */
+.plStayle{
+  font-size: 25rpx;
+}
+.container{
+  font-size: 28rpx;
+}
+.titile-for{
+  display: flex;
+  padding: 20rpx 0; 
+  background-color: #f0f0f0;
+  position: relative;
+}
+.titile-for>view{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  flex: 3;
+}
+.titile-for image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.titile-for text{
+  font-size: 25rpx;
+  margin-top: 10rpx;
+}
+.titile-for .animation{
+  position: absolute;
+  height: 100%;
+  width: 120rpx;
+  top: 0;
+  left: 0;
+  animation: myAnimation 2s infinite;
+}
+@keyframes myAnimation {
+  from {
+    left: -10%;
+    }
+  to {
+    left: 100%;
+    }
+}
+
+image{
+  height: 20rpx;
+  width: 20rpx;
+}
+.panel{
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 10rpx;
+  border-radius: 3rpx;
+  box-shadow: 0rpx 0rpx 1rpx #aaa;
+}
+.panel>view{
+  display: flex;
+}
+.tit{
+  background-color: #49C8DA;
+  color: #fff;
+  line-height: 70rpx;
+  padding:0 20rpx;
+  justify-content: space-between;
+  border-radius: 3rpx;
+}
+.tit image{
+  height:45rpx;
+  width:45rpx;
+  margin:auto 0;    
+}
+input,picker{
+  border-bottom: solid 1rpx #aaa;
+  padding-left: 10rpx;
+  height: 64rpx;
+  width: 75%;
+  box-sizing: border-box;
+  position: relative;
+}
+.pickerImg{
+  position:absolute;
+  width:65rpx;
+  height:64rpx;
+  right:0rpx;
+  bottom:-3rpx;
+}
+.scroll{
+  width: 75%;
+  white-space: nowrap;
+  background-color: #ddd;
+  height: 200rpx;
+  padding: 5rpx 0;
+  box-sizing: border-box;
+}
+.scroll image{
+  margin-left: 8rpx;
+  height:190rpx;
+  width: 200rpx;
+  background-color: silver;
+}
+.item{
+  padding: 10rpx 20rpx;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  line-height: 64rpx;
+}
+.tit+.item{
+  padding-top: 20rpx;
+}
+.panel .item:last-of-type{
+  padding-bottom: 20rpx;
+}
+.search{
+  position: relative;
+  height:64rpx;
+  line-height:64rpx;
+}
+.search input,.search picker{
+  border: solid 1rpx rgb(56, 121, 217);
+  background-color: #fff;
+  height:64rpx;
+}
+.search-png{
+  position:absolute;
+  right:17rpx;
+  height:62rpx;
+  width:74rpx;
+  z-index:1;
+  top:27rpx;
+}
+.search-png:active{
+  background-color: #ddd;
+}
+.steps{
+  width: 100vh;
+}
+.btns button{
+  width: 90%;
+  margin-top: 20rpx;
+}
+.submit{
+  background-color: #49C8D5;
+  color: #fff;
+  margin-top: 50rpx;
+  width:90%;
+}
+.searchCardBtn{
+  margin-bottom: 50rpx;
+}
+.changeinput{
+  background-color: #fff;
+  border:solid 1rpx #ddd;
+}
+.scroll .addimg{
+  height:100rpx;
+  width:100rpx;
+  margin:48rpx 50rpx;
+  background-color:#ddd;
+}
+.text{
+  color: red;
+}
+.item>text{
+  align-self: flex-start ;
+}

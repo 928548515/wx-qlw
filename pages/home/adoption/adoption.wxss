@@ -1,0 +1,107 @@
+page {
+  background-color: #eee;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+  padding: 30rpx 10rpx;
+  box-sizing: border-box
+}
+
+image {
+  height: 230rpx;
+  width: 230rpx;
+}
+.item,.item2{
+  background-color: #fff;
+  border: solid 1rpx #aaa;
+  box-shadow:  0 0 10rpxb#ccc;
+  padding: 20rpx 10rpx;
+  position: relative;
+  padding-top: 30rpx;
+}
+.item{
+  margin-top: 20rpx;
+}
+.item2{
+  margin-top: 30rpx;
+}
+.titile{
+  position: absolute;
+  top: -21rpx;
+  left: 21rpx;
+  font-size: 32rpx;
+  text-shadow: 0 0 1rpx #aaa;
+}
+.content{
+  display: flex;
+}
+.left{
+  flex: 7;
+}
+.right{
+  flex: 3;
+}
+
+.left>view>text{
+  display: inline-block;
+  vertical-align: top;
+  line-height: 55rpx;
+}
+.left>view>text:first-child{
+  width: 30%;
+}
+.left>view>text:last-child{
+  width: 70%;
+}
+
+input,picker,textarea{
+  border: solid 1rpx #bbb;
+  width: 100%;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+input,picker{
+  height: 55rpx;
+  line-height: 55rpx;
+}
+picker{
+  position: relative;
+}
+.content2>view{
+  display: flex;
+  margin: 20rpx 0;
+}
+.content2>view>view:first-child{
+  width: 25%;
+}
+.content2>view>view:last-child{
+  width: 75%;
+}
+.down_select{
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+  border-left: solid 1rpx #555;
+  height: 50rpx;
+  width: 40rpx;
+}
+.item3{
+  display: flex;
+  margin: 50rpx 20rpx 30rpx 20rpx;
+}
+.item3 button{
+  width: 200rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  font-size: 30rpx;
+}
+button:first-child{
+  background-color: #49C8D5;
+  color: #fff;
+}
+.text-warn{
+  color: red;
+}

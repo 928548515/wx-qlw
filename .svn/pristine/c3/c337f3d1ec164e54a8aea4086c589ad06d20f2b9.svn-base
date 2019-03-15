@@ -1,0 +1,52 @@
+/* pages/my/page/bindDeivce/bindDevice.wxss */
+.container{
+  font-size: 32rpx;
+  padding-top: 20rpx;
+}
+.dogInfo>view{
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  margin: 10rpx;
+  padding: 0 10rpx;
+}
+.dogInfo>view:first-child{
+ margin-top: 10rpx;
+}
+.dogInfo>view:last-child{
+ margin-top: 40rpx;
+}
+.dogInfo>view>view:first-child{
+  flex: 3;
+}
+.dogInfo>view>view:last-child{
+  flex: 7;
+}
+input{
+  border-bottom: solid 1rpx #bbb;
+}
+image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.input{
+  position: relative;
+}
+.input input{
+  width: 80%;
+}
+.ewm{
+  position: absolute;
+  right:5rpx;
+  bottom:-5rpx;
+}
+
+.btns button{
+  width: 90%;
+  margin-top: 20rpx;
+}
+.btns button:first-child{
+  background-color: #49C8D5;
+  color: #fff;
+  margin-top: 50rpx;
+}

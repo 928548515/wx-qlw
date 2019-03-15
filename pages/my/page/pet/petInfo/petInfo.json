@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "top-nav": "/pages/components/pages/nav/nav",
+    "i-divider": "/components/dist/divider/index"
+  },
+  "navigationBarBackgroundColor": "#49C8D5",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "宠物详情"
+}

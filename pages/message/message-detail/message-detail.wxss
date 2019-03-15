@@ -1,0 +1,48 @@
+/* pages/message/message-detail/message-detail.wxss */
+page {
+  background-color: #eee;
+}
+.container{
+  font-size: 30rpx;
+  padding: 15rpx;
+}
+.item {
+  font-size: 30rpx;
+  position: relative;
+  line-height: 50rpx;
+  margin-top: 18rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  box-shadow: 1rpx 1rpx 7rpx #888;
+  padding: 10rpx 0;
+}
+.nail {
+  height: 60rpx;
+  width: 60rpx;
+  position: absolute;
+  top: -20rpx;
+  left: -20rpx;
+  transform: rotate(-45deg);
+}
+.titile {
+  font-size: 31rpx;
+  color: #000;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  margin-bottom: 20rpx;
+  background: linear-gradient(to right,#EEDFCC, #fff);
+}
+.content{
+  font-size: 28rpx;
+  padding: 0 10rpx;
+}
+.view-txt{
+  display: flex;
+}
+.view-txt>view:first-child{
+  width: 30%;
+}
+.view-txt>view:last-child{
+  width: 70%;
+  color: #666;
+}

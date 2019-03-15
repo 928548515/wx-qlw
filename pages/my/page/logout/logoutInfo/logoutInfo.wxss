@@ -1,0 +1,81 @@
+/* pages/my/page/logout/logoutInfo/logoutInfo.wxss */
+page{
+  background-color: #eee;
+}
+.container{
+  background-color: #fff;
+  padding: 40rpx 20rpx 150rpx;
+  font-size: 30rpx;
+}
+.container>view {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  line-height: 65rpx;
+  text-indent: 0.5em;
+}
+.inner{
+  width: 520rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+   border:  solid 1rpx #666;
+}
+.textarea textarea{
+  height: 230rpx;
+  margin: 30rpx 0;
+  border:  solid 1rpx #666;
+}
+
+.code{
+  line-height: 80rpx;
+  border: none;
+  display: flex;
+  height: 80rpx;
+}
+.code input{
+  width: 200rpx;
+  height: 60rpx;
+  margin-right: 100rpx;
+}
+.code text{
+  background-color: #49C8D5;
+  border-radius: 15rpx;
+  color: #fff;
+  font-weight: bold;
+  font-size: 28rpx;
+  height: 60rpx;
+  width: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180rpx;
+  padding:  0 80rpx;
+}
+.btns text{
+  width: 230rpx;
+   background-color: rgb(168, 24, 24);
+   border-radius: 5rpx;
+   text-align: center;
+
+}
+
+.btns text:last-child{
+  background-color:#aaa;
+   height: 70rpx;
+  line-height: 70rpx;
+   letter-spacing:25rpx;
+}
+.btn-sum{
+  width: 230rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 35rpx;
+  background-color: #49C8D5;
+  letter-spacing:25rpx;
+}

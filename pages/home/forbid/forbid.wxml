@@ -1,0 +1,29 @@
+<!--禁养犬只列表-->
+<view class='container'>
+  <view class='forbid_dog_tar' wx:if="{{ forbid_dogs && forbid_dogs.length > 0 }}">
+    <block wx:for="{{ forbid_dogs }}" wx:key="index" catchtap="tobanDetail" data-item="{{item}}">
+      <view class='forbid_dog_box' catchtap="tobanDetail" data-item='{{item}}'>
+        <view class='forbid_dog_item'>
+          <image src='{{ item.tImages[0].thumbnailUrl }}'></image>
+        </view>
+        <view class='content'>
+          <view class='client'>
+            <text>犬种名：</text>
+            <text>{{ item.tDictionary.dictionaryDescribe?item.tDictionary.dictionaryDescribe:"" }}</text>
+          </view>
+          <view class='client'>
+            <text>列入时间：</text>
+            <text>{{ item.creationTime?item.creationTime:"" }}</text>
+          </view>
+           <view class='client'>
+            <text>备注：</text>
+            <text>{{ item.note?item.note:'无' }}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<i-load-more tip="到底了" loading="{{ false }}" wx:if="{{forbid_dogs.length >= page.totalCount }}" />
+<!-- 没有数据展示 -->
+<no-data wx:if="{{ !forbid_dogs || forbid_dogs.length == 0 }}"></no-data>

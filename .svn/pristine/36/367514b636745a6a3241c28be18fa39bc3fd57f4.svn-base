@@ -1,0 +1,114 @@
+/**app.wxss**/
+/*功能封装2：专门用于做间隔的类 */
+.divier {
+  height: 20rpx;
+  background-color: #eee;
+  box-shadow: 0 5rpx 5rpx rgba(0,0, 0,.1) inset;
+}
+
+.divier_write {
+  height: 20rpx;
+  background-color:white;
+}
+
+/* 功能封装4 箭头封装*/
+.arrow{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.arrow::after{
+  content: "  ";
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 2rpx solid #ccc;
+  border-right: 2rpx solid #ccc;
+  transform: rotate(45deg);
+  display: block;
+}
+
+/* 功能封装4 箭头封装*/
+.arrow_right{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow_right::after{
+  content: "";
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 2rpx solid #ccc;
+  border-right: 2rpx solid #ccc;
+  transform: rotate(45deg);
+  display: block;
+
+}
+
+
+/* 功能封装 预约按钮*/
+.appointment {
+  height:50rpx;
+  width:120rpx;
+  background-color:rgb(66,199,219);
+  border-radius: 10rpx;
+  color: white;
+  text-align: center;
+  line-height: 50rpx;
+}
+.titile{
+  width: 65%;
+}
+.appointment:active{
+  background-color:rgb(66,199,119);
+}
+/* .appointment::after{
+  content: "预约";
+  font-size: 14px;
+  width: 80rpx;
+  height: 40rpx;
+  background-color: rgb(66,199,219);
+  border-radius: 10rpx;
+  color: white;
+  display: block;
+  text-align: center;
+} */
+
+/* 功能封装 分割线*/
+.segmenting_line{
+  height: 2rpx;
+  background-color: #ccc;
+  margin-bottom: 0rpx;
+}
+
+
+.must {
+  /*子绝父相*/
+  position: relative;
+}
+
+.must::after {
+  /*通过伪元素设置一像素的右边框*/
+  content: "*";
+  /*定位，不占位置*/
+  position: absolute;
+  left: 5rpx;
+  top: 5rpx;
+  color: red;
+}
+
+.drop-down {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drop-down::after {
+  content: "";
+  width: 15rpx;
+  height: 15rpx;
+  border-bottom: 2rpx solid black;
+  border-right: 2rpx solid black;
+  transform: rotate(45deg);
+  display: block;
+  margin-right: 15rpx;
+}

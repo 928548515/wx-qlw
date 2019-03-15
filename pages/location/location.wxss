@@ -1,0 +1,51 @@
+/* pages/location/location.wxss */
+.map_box{
+  position:absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+#map{
+  width: 100%;
+  height: 100%;
+}
+.text_box{
+  position:absolute;
+  height: 90px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.text_box .text{
+  margin: 15px;
+}
+.detail_button{
+  position:absolute;
+  bottom: 30px;
+  right: 10px;
+  padding: 3px 5px;
+  color: #fff;
+  background: #0091ff;
+  width:50px;
+  text-align:center;
+  border-radius:5px;
+}
+
+.refreshIcon {
+  width: 48rpx;
+  height: 48rpx;
+  background-color: white;
+  position: absolute;
+  left: 10rpx;
+  bottom: 50rpx;
+  border-radius: 30rpx;
+}
+.myPosition {
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  left: 10rpx;
+  bottom: 120rpx;
+  border-radius: 30rpx;
+}

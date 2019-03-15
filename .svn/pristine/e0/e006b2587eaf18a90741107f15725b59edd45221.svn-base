@@ -1,0 +1,96 @@
+<!--pages/my/page/appointment/service-detail/service-detail.wxml-->
+<view class='container'>
+  <view class='item'>
+    <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image>
+    <view class='titile'>网点详情</view>
+    <view class='content'>
+      <view class='view-txt'>
+        <view>网点名称：</view>
+        <view>{{item.organizationName}}</view>
+      </view>
+      <!-- <view class='view-txt'>
+        <view>注册资金：</view>
+        <view>{{item.organizationCapital?item.organizationCapital+"万":""}}</view>
+      </view> -->
+      <view class='view-txt'>
+        <view>区域：</view>
+        <view>{{item.ownedCity?item.ownedCity:""}}</view>
+      </view>
+      <view class='view-txt'>
+        <view>详细地址：</view>
+        <view>{{item.address?item.address:""}}</view>
+      </view>
+       <view class='view-txt'>
+        <view>固定电话：</view>
+        <view>{{item.fixedPhone?item.fixedPhone:""}}</view>
+      </view>
+       <view class='view-txt'>
+        <view>电话：</view>
+        <view>{{item.phone?item.phone:""}}</view>
+      </view>
+      <!-- <view class='view-txt'>
+        <view>注册号：</view>
+        <view>{{item.registerNumber?item.registerNumber:""}}</view>
+      </view> -->
+      <!-- <view class='view-txt'>
+        <view>信用代码：</view>
+        <view>{{item.creditCode?item.creditCode:""}}</view>
+      </view> -->
+     
+      <view class='view-txt'>
+        <view>经营范围：</view>
+        <view>{{item.scopeOfOperation?item.scopeOfOperation:""}}</view>
+      </view>
+      <view class='view-txt'>
+        <view>责任人：</view>
+        <view>{{item.personLiable?item.personLiable:""}}</view>
+      </view>
+      <view class='view-txt'>
+        <view>成立时间：</view>
+        <view>{{item.establishDate?item.establishDate:""}}</view>
+      </view>
+      <!-- <view class='view-txt'>
+        <view>录入时间：</view>
+        <view>{{item.creationTime?item.creationTime:""}}</view>
+      </view> -->
+    </view>
+  </view>
+  <view class='item'>
+    <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image>
+    <view class='titile'>网点图片</view>
+    <view class='content'  wx:if="{{item.pictureUrl && item.pictureUrl.length>0}}">
+      <view class='view-txt'>
+        <scroll-view class='pic-content' scroll-x="true">
+          <!-- <image wx:for='{{item.pictureUrl}}' wx:for-item="e" wx:if='{{item.pictureUrl && item.pictureUrl.length>0}}' wx:key='{{index}}' src='{{e.thumbnailUrl}}' bindlongpress='delImage' bindtap='showImageInfo' data-index="{{index}}" ></image>
+          <image bindtap='uploadImg' src='/assets/page/my/pet/petInfo/add-icon.png' class='addimg'></image> -->
+          <image wx:for='{{item.pictureUrl}}' wx:for-item="e" wx:if='{{item.pictureUrl && item.pictureUrl.length>0}}' wx:key='{{index}}' src='{{e.thumbnailUrl}}' bindtap='showImageInfo' data-index="{{index}}" ></image>
+          <!-- <image src='/assets/page/my/pet/petInfo/add-icon.png' class='addimg'></image> -->
+        </scroll-view>
+      </view>
+    </view>
+    <view class='none' wx:else>
+        无
+    </view>
+  </view>
+  <view class='item'>
+    <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image>
+    <view class='titile'>网点证书图片</view>
+    <view class='content'  wx:if="{{item.orgCardImgs && item.orgCardImgs.length>0}}">
+      <view class='view-txt'>
+        <scroll-view class='pic-content' scroll-x="true">
+          <!-- <image wx:for='{{item.pictureUrl}}' wx:for-item="e" wx:if='{{item.pictureUrl && item.pictureUrl.length>0}}' wx:key='{{index}}' src='{{e.thumbnailUrl}}' bindlongpress='delImage' bindtap='showImageInfo' data-index="{{index}}" ></image>
+          <image bindtap='uploadImg' src='/assets/page/my/pet/petInfo/add-icon.png' class='addimg'></image> -->
+          <image wx:for='{{item.orgCardImgs}}' wx:for-item="e" wx:if='{{item.orgCardImgs && item.orgCardImgs.length>0}}' wx:key='{{index}}' src='{{e.thumbnailUrl}}' bindtap='showCradImageInfo' data-index="{{index}}" ></image>
+          <!-- <image src='/assets/page/my/pet/petInfo/add-icon.png' class='addimg'></image> -->
+        </scroll-view>
+      </view>
+    </view>
+    <view class='none' wx:else>
+        无
+    </view>
+  </view>
+  <view class='btns'>
+    <button class='submit' bindtap='toAppointmentInfo' data-appointment='{{item}}'>预 约</button>
+    <button bindtap='toBack'>返 回</button>
+  </view>
+</view>

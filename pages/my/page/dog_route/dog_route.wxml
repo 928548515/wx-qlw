@@ -1,0 +1,11 @@
+<!--犬只活动轨迹-->
+<view wx:if="{{ ishasData }}">
+  <block wx:for="{{ dogs }}" wx:key="index">
+      <view class='dog_item' bindtap='toDogRoute' data-index='{{ index }}'>
+          <image src='{{ item.url }}'></image>
+          <text> {{ item.dogName }} </text><text class='text'>的轨迹</text>
+      </view>
+  </block>
+</view>
+<!-- 没有数据展示 -->
+<no-data wx:if="{{ !ishasData }}"></no-data>

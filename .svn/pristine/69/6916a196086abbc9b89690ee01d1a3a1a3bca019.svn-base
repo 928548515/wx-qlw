@@ -1,0 +1,41 @@
+@import "../../../../components/wxParse/wxParse.wxss";
+.info_desc_title {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  margin-top: 50rpx;
+}
+.info_desc_title text{
+  text-align: center;
+}
+
+.info_desc_subtitle {
+  font-size: 12px;
+  color: rgb(153, 153, 153);
+  margin-top: 30rpx;
+}
+
+.info_desc_subtitle text{
+  margin-left: 15rpx;
+}
+
+.desc_subtitle {
+  display: flex;
+}
+
+.desc_subtitle view{
+  width: 48%;
+  margin-left: 2%;
+}
+
+.createdate {
+  width: 60%;
+  margin-left: 2%;
+}
+
+
+
+.info_desc_content{
+  padding:10rpx;
+  margin-top:20rpx;
+}

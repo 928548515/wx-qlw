@@ -1,0 +1,27 @@
+/*  */
+page{
+  background-color: #EEEEEE
+}
+
+.dog_item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-top: 10rpx;
+  height: 200rpx;
+}
+
+.dog_item image{
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 20rpx;
+  background-color: #ddd;
+}
+
+.dog_item text{
+  margin-left: 50rpx;
+}
+.text{
+  color: #666;
+  font-size:30rpx;
+}

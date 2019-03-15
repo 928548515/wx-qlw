@@ -1,0 +1,16 @@
+<!--Map-->
+<view class="map_box" wx:if="{{ isLogin&&ishasData }}">
+  <map class='map'  id="map" longitude="{{ longitude }}" latitude="{{ latitude }}" scale="14" markers="{{markers}}" >
+      <cover-view class='refreshIcon' bindtap='refreshPath'>
+          <cover-image src='{{refreshIcon}}'></cover-image>
+      </cover-view>
+      <cover-view class='myPosition' bindtap='myPosition'>
+          <cover-image src='{{myPositionIcon}}'></cover-image>
+      </cover-view>
+  </map>
+</view>
+<!-- 未登录展示 -->
+<not-login wx:if="{{ !isLogin }}"></not-login>
+<!-- 没有数据展示 -->
+<no-data wx:if="{{ !ishasData }}"></no-data>
+

@@ -1,0 +1,7 @@
+<view class='nodata'>
+  <image src='{{ imgUrl }}'></image>
+</view>
+<view class='text'>
+    <text>暂无数据</text>
+</view>
+

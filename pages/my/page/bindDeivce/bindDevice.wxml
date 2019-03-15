@@ -1,0 +1,35 @@
+<!--pages/my/page/bindDeivce/bindDevice.wxml-->
+<view class='container'>
+  <view class='dogInfo'>
+    <view>
+      <view>犬名：</view>
+      <view>
+        <input value="{{dogInfo.dogName}}" disabled></input>
+      </view>
+    </view>
+    <view>
+      <view>项圈编号：</view>
+      <view class='input'>
+        <input placeholder='请输入项圈编号' value='{{deviceNo}}' bindinput='deviceNoChange'></input>
+        <view catchtap="scanCode" class='ewm'>
+          <image src='/assets/page/my/bindDevice/scan_code.png'></image>
+        </view>
+      </view>
+    </view>
+    <!-- <i-cell-group i-class="abc">
+      <i-cell title="犬名：">
+        <input slot="footer" value="{{dogInfo.dogName}}" disabled></input>
+      </i-cell>
+      <i-cell title="项圈编号：" i-class="deviceBind">
+        <input slot="footer" value="{{deviceNo}}" bindinput='inputChanged' placeholder='请输入线圈编号' class='scanInput' ></input>
+        <view catchtap='scanCode' class='ewm'>
+          <image src='/assets/page/my/bindDevice/scan_code.png' ></image>
+        </view>
+      </i-cell>
+    </i-cell-group> -->
+  </view>
+  <view class='btns'>
+    <button bindtap='bindDevie'>绑 定</button>
+    <button>重 置</button>
+  </view>
+</view>

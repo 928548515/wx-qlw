@@ -1,0 +1,122 @@
+/* pages/my/page/dogCard.wxss */
+page{
+  background-color: #eee;
+}
+.container{
+  padding: 15rpx;
+  margin-bottom: -20rpx;
+  font-size: 28rpx;
+}
+image{
+  height: 100rpx;
+  width: 100rpx;
+}
+.container>view {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 444rpx;
+  position: relative;
+  border-radius: 40rpx;
+  background-size: 100% 150% ;
+  background-repeat: no-repeat;
+  /* padding: 30rpx; */
+  width: 100%;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  border: solid 3rpx #aaa;
+  margin-bottom: 35rpx;
+  box-shadow: 0 0 10rpx #ccc;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 20rpx;
+}
+.container .container-dog-owners{
+  align-items: flex-start;
+
+}
+
+.card-titile{
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+  font-size: 37rpx;
+  color: #fff;
+}
+.card-titile image{
+  margin-right: 30rpx;
+  height: 50rpx;
+  width: 50rpx;
+}
+.crad-context view{
+  line-height: 54rpx;
+}
+.crad-context{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 50rpx;
+}
+.flash{
+  height: 60rpx;
+  width: 60rpx;
+  position: absolute;
+  right: 17rpx;
+  bottom: 16rpx;
+}
+.text-innser>view{
+  /* margin: 8rpx 0; */
+}
+.text-innser>view>text:first-child{
+  width:160rpx;
+  display: inline-block;
+}
+.card-image{
+  height:280rpx;
+  width: 200rpx;
+  border-radius: 10rpx;
+  /* margin-top:-107rpx;
+  margin-right:-25rpx; */
+  position: absolute;
+  right:68rpx;
+  top:86rpx;
+}
+.container-dog-owners{
+    background-color: #eee;
+}
+.container-dog-owners>view{
+  line-height: 54rpx;
+}
+.container-org-info{
+  display: flex;
+  margin-top: 50rpx;
+
+}
+.org-info-ewm{
+  height: 130rpx;
+  width: 130rpx;
+  margin-right: 32rpx;
+  background-size: 100% 100%;
+}
+.org-info{
+  position: relative;
+  bottom: -28rpx;
+  font-size: 30rpx;
+}
+.god-owners-wjx{
+  border: solid 8rpx #D61617;
+  width: 150rpx;
+  height: 150rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  border-radius: 50%;
+  padding: 20rpx;
+}
+.god-owners-wjx>image{
+  margin-top: -5rpx; 
+  height: 100%;
+  width: 100%;
+}
+.fonred{
+  color: red;
+}

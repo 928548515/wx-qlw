@@ -1,0 +1,91 @@
+/* pages/home/noPetDetail/noPetDetail.wxss */
+page {
+  background-color: #eee;
+}
+.container{
+  font-size: 30rpx;
+  padding: 15rpx;
+}
+.item {
+  font-size: 30rpx;
+  position: relative;
+  line-height: 50rpx;
+  margin-top: 18rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  box-shadow: 1rpx 1rpx 7rpx #888;
+  padding: 10rpx 0;
+}
+.nail {
+  height: 60rpx;
+  width: 60rpx;
+  position: absolute;
+  top: -20rpx;
+  left: -20rpx;
+  transform: rotate(-45deg);
+}
+.titile {
+  font-size: 31rpx;
+  color: #000;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  margin-bottom: 10rpx;
+  background: linear-gradient(to right,#EEDFCC, #fff);
+  box-sizing: border-box;
+}
+.none{
+  padding-left:23rpx;
+}
+.content{
+  font-size: 28rpx;
+  padding: 0 10rpx;
+}
+.view-txt{
+  display: flex;
+}
+.view-txt>view:first-child{
+  width: 30%;
+}
+.view-txt>view:last-child{
+  width: 70%;
+  color: #666;
+}
+
+.pic-content {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 177rpx;
+  width: 100%；;
+  white-space: nowrap;
+  margin-left:-10rpx;
+  margin-right:-10rpx;
+}
+
+.pic-content image {
+  height:173rpx;
+  width:173rpx;
+  box-sizing: border-box;
+  margin-left: 10rpx;
+  background-color:#eee;
+}
+.pic-content .addimg{
+  background-color:#fff;
+}
+.btns{
+  margin-top: 50rpx;
+  display: flex;
+}
+.btns button{
+  width: 33%;
+  margin-top: 20rpx;
+  height:75rpx;
+  line-height: 75rpx;
+}
+.submit{
+  background-color: #49C8D5;
+  color: #fff;
+  margin-top: 50rpx;
+  width:90%;
+}

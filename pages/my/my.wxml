@@ -1,0 +1,67 @@
+<!--pages/my/my.wxml-->
+<!-- 头部 -->
+<view class='top-container' callbackUrl='/pages/my/my'>
+
+  <image src="/assets/page/my/top-bgc-watermark01.png" class='tot-img-icon'></image>
+
+  <image src="/assets/page/my/top-bgc-watermark02.png" class='tot-img-icon'></image>
+
+  <image src="/assets/page/my/top-bgc-watermark03.png" class='tot-img-icon'></image>
+
+  <image src="/assets/page/my/top-bgc-watermark04.png" class='tot-img-icon'></image>
+
+  <image src="/assets/page/my/top-bgc-watermark05.png" class='tot-img-icon'></image>
+
+  <image src="/assets/page/my/top-bgc-watermark06.png" class='tot-img-icon'></image>
+
+  <view class='top-per-icon' bindtap='tologinPage'>
+    <image src='/assets/page/my/top-person.png'></image>
+    <text>{{ userInfo.name }}</text>
+  </view>
+</view>
+<!-- 菜单 -->
+<view class="{{ isLogin?'login':'not_login' }}  middle-memus">
+  <view class='memu' bindtap='toMyData'>
+    <image src='/assets/page/my/middle-icon-09.png'></image>
+    <text class='arrow_right'>我的资料</text>
+  </view>
+  <view class='memu' bindtap='todogCard'>
+    <image src='/assets/page/my/middle-icon-01.png'></image>
+    <text class='arrow_right'>我的犬证</text>
+  </view>
+  <view class='memu' bindtap='todogPet'>
+    <image src='/assets/page/my/middle-icon-02.png'></image>
+    <text class='arrow_right'>我的宠物</text>
+  </view>
+  <view class='memu' bindtap='todogRoute'>
+    <image src='/assets/page/my/middle-icon-03.png'></image>
+    <text class='arrow_right'> 活动轨迹</text>
+  </view>
+  <view class='memu' bindtap='toAppointment'>
+    <image src='/assets/page/my/middle-icon-04.png'></image>
+    <text class='arrow_right'>业务预约</text>
+  </view>
+  <view class='memu' bindtap='tologout'>
+    <image src='/assets/page/my/middle-icon-05.png'></image>
+    <text class='arrow_right'>犬主注销</text>
+  </view>
+
+  <!-- <view class='memu' bindtap='toMyMsg'>
+    <image src='/assets/page/my/middle-icon-08.png'></image>
+    <text class='arrow_right'>我的消息</text>
+  </view> -->
+  <!-- 
+  <navigator class='memu'>
+    <image src='/assets/page/my/middle-icon-06.png'></image>
+    <view>设备模式</view>
+  </navigator>
+ <navigator class='memu'>
+    <image src='/assets/page/my/middle-icon-07.png'></image>
+    <view>安全围栏</view>
+  </navigator>
+   -->
+</view>
+
+<view class='logout' bindtap='logout' wx:if="{{ isLogin }}">
+  <text>退出登录</text>
+</view>

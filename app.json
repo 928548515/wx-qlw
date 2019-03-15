@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/page/dog_route/route/route",
+    "pages/my/page/appointment/appointment",
+    "pages/my/my",
+    "pages/home/forbid/forbid",
+    "pages/my/page/pet/pet",
+    "pages/login/login",
+    "pages/my/page/dog_route/dog_route",
+    "pages/my/page/myData/resetPwd/resetPwd",
+    "pages/my/page/myData/myData",
+    "pages/my/page/logout/logout",
+    "pages/my/page/bindDeivce/bindDevice",
+    "pages/my/page/appointment/service-detail/service-detail",
+    "pages/dogcardHandle/dogCardHandle",
+    "pages/message/message",
+    "pages/my/page/card/card",
+    "pages/my/page/appointment/appointment-info/appointment-info",
+    "pages/my/page/pet/petInfo/petInfo",
+    "pages/my/page/logout/logoutInfo/logoutInfo",
+    "pages/location/location",
+    "pages/components/pages/nav/nav",
+    "pages/home/information/information",
+    "pages/home/information/information_desc/information_desc",
+    "pages/home/adoption/adoption",
+    "pages/home/adoption_list/adoption_list",
+    "pages/appointment/appointment_dog/appointment_dog",
+    "pages/message/message-detail/message-detail",
+    "pages/my/page/unBindDevice/unBindDevice",
+    "pages/home/noPetDetail/noPetDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "犬联网",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tabBars/home.png",
+        "selectedIconPath": "assets/tabBars/home-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "assets/tabBars/message.png",
+        "selectedIconPath": "assets/tabBars/message-active.png"
+      },
+      {
+        "pagePath": "pages/location/location",
+        "text": "定位",
+        "iconPath": "assets/tabBars/location.png",
+        "selectedIconPath": "assets/tabBars/location-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "assets/icon/zhuazi.png",
+        "selectedIconPath": "assets/icon/zhuazi-active.png"
+      }
+    ]
+  }
+}

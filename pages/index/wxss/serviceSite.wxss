@@ -1,0 +1,110 @@
+
+.serviceSite_tar {
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceSite_title {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.serviceSite_title image {
+  width: 172rpx;
+  height: 46rpx;
+  margin-left: 250rpx;
+}
+
+.serviceSite_title_more {
+  display: flex;
+  align-items: center;
+  margin-left: -50rpx;
+}
+
+.serviceSite_title_more image {
+  height: 35rpx;
+  width: 35rpx;
+}
+
+.serviceSites {
+  display: flex;
+  /*设置子元素竖直排列*/
+  flex-direction: column;
+  align-items: center;
+}
+
+.serviceSite_item {
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  border:solid 1rpx #ddd;
+  padding:8rpx;
+  box-sizing: border-box;
+}
+
+.serviceSite_item image {
+  width:200rpx;
+  height:170rpx;
+}
+
+.serviceSite_desc {
+  width: 484rpx;
+  height: 176rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.serviceSite_address{
+  line-height: 25rpx;
+}
+
+.serviceSite_name image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.serviceSite_name {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 28rpx;
+}
+
+.serviceSite_phone{
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+}
+
+.serviceSite_phone image{
+  height: 25rpx;
+  width: 25rpx;
+}
+.serviceSite_phone text{
+  margin-left: 15rpx;
+}
+
+
+serviceSite_address{
+  display: flex;
+  font-size: 16px;
+  align-items: center
+}
+
+.serviceSite_address image{
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.serviceSite_address text{
+  margin-left: 15rpx;
+  font-size: 12px;
+  color: #ccc
+}
+
+.no_serviceSites{
+  display: none
+}

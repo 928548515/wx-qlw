@@ -1,0 +1,18 @@
+Page{
+  background-color: #eee
+}
+
+.nodata {
+  margin-left: 222rpx;
+  margin-top: 310rpx;
+}
+
+.nodata image{
+  width: 320rpx;
+  height: 240rpx;
+}
+.text{
+  margin-left: 310rpx;
+  margin-top: 40rpx;
+  color: #ccc
+}

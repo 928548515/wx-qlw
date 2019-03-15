@@ -1,0 +1,15 @@
+<import src="../../../../components/wxParse/wxParse.wxml" /> 
+<view class="info_desc_tar">
+    <view class='info_desc_title'>
+      <text>{{ info_desc.infoTitile }}</text>
+      <view class='info_desc_subtitle'>
+          <text>浏览次数：{{ info_desc.viewCount }}</text>
+          <text>来源：{{ info_desc.tOrganization.organizationName }}</text>
+          <text>发布时间：{{ info_desc.creationTime }} </text>
+      </view>
+    </view>
+    <view class='info_desc_content'>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+
+</view>

@@ -1,0 +1,22 @@
+<!--登录-->
+<view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='login_title'>
+      <image src='{{ login.title_url }}'></image>
+    </view>
+    <view class='login_body'>
+      <view class='username'>
+        <image src='{{ login.username_icon }}'></image>
+        <input placeholder-class="input-placeholder" placeholder='请输入用户名' name="username"></input>
+      </view>
+      <view class='password'>
+        <image src='{{ login.password_icon }}'></image>
+        <input placeholder-class="input-placeholder" placeholder='请输入密码' name="password" password='true'> </input>
+      </view>
+    </view>
+    <button class='submit_button' form-type='submit'>登 录</button>
+    <view>
+      <button class='submit_button toIndex' bindtap='toIndex'>首 页</button>
+    </view> 
+  </form>
+</view>

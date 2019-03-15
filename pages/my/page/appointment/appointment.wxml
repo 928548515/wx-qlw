@@ -1,0 +1,58 @@
+<!--pages/my/page/appointment/appointment.wxml-->
+<view wx:if="{{ ishasData }}">
+  <view class='map' animation="{{mapAnimation.data}}">
+    <view class="map_box">
+      <!-- <view class='max'> -->
+      <!-- <cover-view class='btnImg' src="{{mapAnimation.fullMax?'/assets/page/my/appoitment/min-icon.png':'/assets/page/my/appoitment/max-icon.png'}}">
+          <image src="{{mapAnimation.fullMax?'/assets/page/my/appoitment/min-icon.png':'/assets/page/my/appoitment/max-icon.png'}}"></image>
+        </cover-view> -->
+      <!-- <cover-image class='btnImg' src="{{mapAnimation.fullMax?'/assets/page/my/appoitment/min-icon.png':'/assets/page/my/appoitment/max-icon.png'}}"></cover-image>
+      </view> -->
+      <map id="navi_map" longitude="{{ postion.longitude }}" latitude="{{ postion.latitude }}" scale="15" markers="{{markers}}" polyline="{{polyline}}"></map>
+
+    </view>
+
+    <!-- 区分标识 -->
+    <view class='tar'>
+      <view class="tar_items">
+        <view class='tar_item_i'>
+          <image src='/assets/icon/remark_blue.png'></image>
+        </view>
+        <text>仅可办理免疫证</text>
+      </view>
+      <view class="tar_items">
+        <view class='tar_item_i'>
+          <image src='/assets/icon/remark_red.png'></image>
+        </view>
+        <text>可办理免疫证和犬证</text>
+      </view>
+      <view class="tar_items_last" bindtap='fullMap'>
+        <image class='btnImg' src="{{mapAnimation.fullMax?'/assets/page/my/appoitment/min-icon.png':'/assets/page/my/appoitment/max-icon.png'}}"></image>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 列表 -->
+  <view class='list'>
+    <navigator class='item' wx:for='{{ listInfo }}' wx:key='index' url='/pages/my/page/appointment/service-detail/service-detail?id={{item.orgId}}'>
+      <!-- <view class='item' wx:for='{{ listInfo }}' wx:key='index' bindtap='toDetail' data-item='{{item}}'> -->
+      <image src='{{item.pictureUrl.length>0?item.pictureUrl[0].thumbnailUrl:"/assets/pethospital/serviceSite.png"}}'></image>
+      <view class='content'>
+        <text class='titile'>{{item.organizationName}}</text>
+        <view class='phone'>
+          <image src='/assets/page/my/appoitment/phone-icon.png'></image>
+          <text>{{item.fixedPhone?item.fixedPhone:item.phone}}</text>
+        </view>
+        <view class='add'>
+          <image src='/assets/page/my/appoitment/position-icon.png'></image>{{item.distance?item.distance:'~'}} | {{item.address}}
+        </view>
+        <view data-appointment='{{item}}' catchtap='toAppointmentInfo' class='but'>预 约</view>
+      </view>
+      <!-- </view> -->
+    </navigator>
+  </view>
+</view>
+<i-load-more tip="到底了" loading="{{ false }}" wx:if="{{listInfo.length >= param.totalCount }}" />
+<!-- 没有数据展示 -->
+<no-data wx:if="{{ param.totalCount == 0 }}"></no-data>

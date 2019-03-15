@@ -1,0 +1,38 @@
+<!--消息页面-->
+<view class='message'>
+  <view class='selectds' wx:if="{{ isLogin }}">
+    <view>
+      <view class='picker_left'>消息筛选：</view>
+      <!-- <i-switch value="{{allMsg}}" bind:change="msgChanged" slot="footer"></i-switch> -->
+      <picker bindchange="msgTypeChange" value="{{msgType.index}}" range="{{msgType.array}}" class='picker_right'>
+        <view>
+          {{msgType.array[msgType.index]}}
+        </view>
+        <view class='selectd'>
+          <image src='/assets/icon/trilateral-icon.png'></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='message_body' wx:if="{{ notices && notices.length>0 }}">
+    <block wx:for="{{ notices }}" wx:key="index">
+      <!-- 通知消息item -->
+      <navigator class='message_item' url='/pages/message/message-detail/message-detail?notifId={{item.notifId}}'>
+        <view class='message_item_title'>
+          <image src='{{ item.iconUrl }}'></image>
+          <text class='message_item_name'>{{ item.notifTitle }}</text>
+          <text class='message_item_date'>{{ item.creationTime }}</text>
+        </view>
+        <view class='message_item_content'>
+          <text>{{ item.notiContent }}</text>
+        </view>
+      </navigator>
+      <view class='segmenting_line'></view>
+    </block>
+  </view>
+</view>
+<!-- 未登录展示 -->
+<not-login wx:if="{{ !isLogin }}"></not-login>
+
+<!-- 没有数据展示 -->
+<no-data wx:if="{{ isLogin && !(notices && notices.length>0) }}"></no-data>

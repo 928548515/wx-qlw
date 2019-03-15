@@ -1,0 +1,122 @@
+/* pages/my/page/pet/petInfo/petInfo.wxss */
+
+page {
+  background-color: #eee;
+}
+
+.container {
+  padding: 0 15rpx;
+  height: 100%;
+}
+
+.container>view {
+  font-size: 30rpx;
+  position: relative;
+  line-height: 50rpx;
+  margin-top: 18rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  box-shadow: 1rpx 1rpx 7rpx #888;
+  padding: 20rpx 0 0 0;
+}
+
+.titile {
+  /* position: absolute; */
+  /* top: -25rpx;
+  left: 50rpx; */
+  font-size: 31rpx;
+  color: #000;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  margin-bottom: 20rpx;
+  background: linear-gradient(to right,#EEDFCC, #fff);
+}
+
+image {
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.pic {
+  position: relative;
+}
+
+.pic-content {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 170rpx;
+  width: 100%；;
+  white-space: nowrap;
+}
+
+.pic-content image {
+  height: 160rpx;
+  width: 160rpx;
+  box-sizing: border-box;
+  margin-left: 20rpx;
+  background-color:#eee;
+}
+.pic-content .addimg{
+  background-color:#fff;
+}
+
+.pic-content image:first-child {
+  margin-left: 10rpx;
+}
+
+.card {
+  position: relative;
+  color: #666;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.text-txt {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.text-txt>text:first-child {
+  display: inline-block;
+  padding-right: 80rpx;
+  /* width: 150rpx; */
+  width: 40%;
+  box-sizing: border-box;
+}
+
+.text-txt>text:last-child, .text-ins-info {
+  /* width: 400rpx; */
+  color: #333;
+  font-size: 28rpx;
+  width: 60%;
+}
+
+.card-inner {
+  border-bottom: dashed 3rpx #aaa;
+  padding: 20rpx;
+}
+
+.nail {
+  height: 60rpx;
+  width: 60rpx;
+  position: absolute;
+  top: -20rpx;
+  left: -20rpx;
+  transform: rotate(-45deg);
+}
+
+.botn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #888;
+}
+.null{
+  line-height: 60rpx;
+  margin-top: -20rpx;
+  margin-left: 20rpx;
+}

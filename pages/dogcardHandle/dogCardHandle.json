@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#49C8D5",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "犬证申办",
+  "usingComponents": {
+    "i-tag": "../../components/dist/tag/index",
+    "i-divider": "../../components/dist/divider/index",
+    "i-load-more": "../../components/dist/load-more/index",
+    "i-steps": "../../components/dist/steps/index",
+    "i-step": "../../components/dist/step/index"
+  }
+}
