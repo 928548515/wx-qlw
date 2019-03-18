@@ -51,6 +51,8 @@ page {
   color: #666;
 }
 
+
+
 .pic-content {
   position: relative;
   display: flex;

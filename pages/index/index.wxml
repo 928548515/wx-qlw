@@ -122,8 +122,8 @@
       <block wx:for="{{ counts }}" wx:for-item="i" wx:key="index">
         <swiper-item class="forbid_items">
           <view catchtap='tobanDetail' data-item='{{item}}' class='forbid_item' wx:for="{{ forbid_dogs }}" wx:key="j" wx:for-index="j" wx:if="{{  j<4*i && j>=4*(i-1)  }}">
-            <image src='{{ item.tImages[0].thumbnailUrl }}'></image>
-            <text>{{ item.tDictionary.dictionaryDescribe }}</text>
+            <image src='{{ item.thumbnailUrl }}'></image>
+            <text>{{ item.dogBanName }}</text>
           </view>
         </swiper-item>
       </block>

@@ -17,6 +17,7 @@ Page({
    */
   onLoad: function(opt) {
     const item = JSON.parse(opt.item)
+    console.log(item);
     this.setData({
       banInfo: item
     })

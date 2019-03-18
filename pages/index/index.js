@@ -136,37 +136,37 @@ Page({
    * 获取禁养品种
    */
   getforbid_dog: function() {
-    app.globalData.http("/ban/findAll", "get", {
-      pn: 1,
-      pageSize: 100
-    }).then(res => {
-      if (res.data.status == 200) {
-        if (!res.data.data.lists || res.data.data.lists.length == 0) {
-          this.setData({
-            isforbidDog: false
-          })
-          return;
-        }
-        const list = res.data.data.lists;
-        this.setData({
-          forbid_dogs: list
-        });
-        //获取犬只轮询次数
-        var inte = parseInt(list.length / 4);
-        var rema = list.length % 4;
-        if (rema != 0) {
-          inte = inte + 1;
-        }
-        var counts = this.data.counts;
-        for (var i = 0; i < inte; i++) {
-          counts.push(i + 1);
-        }
-        this.setData({
-          counts: counts
-        })
-      }
-    })
-    return;
+    // app.globalData.http("/ban/findAll", "get", {
+    //   pn: 1,
+    //   pageSize: 100
+    // }).then(res => {
+    //   if (res.data.status == 200) {
+    //     if (!res.data.data.lists || res.data.data.lists.length == 0) {
+    //       this.setData({
+    //         isforbidDog: false
+    //       })
+    //       return;
+    //     }
+    //     const list = res.data.data.lists;
+    //     this.setData({
+    //       forbid_dogs: list
+    //     });
+    //     //获取犬只轮询次数
+    //     var inte = parseInt(list.length / 4);
+    //     var rema = list.length % 4;
+    //     if (rema != 0) {
+    //       inte = inte + 1;
+    //     }
+    //     var counts = this.data.counts;
+    //     for (var i = 0; i < inte; i++) {
+    //       counts.push(i + 1);
+    //     }
+    //     this.setData({
+    //       counts: counts
+    //     })
+    //   }
+    // })
+    // return;
     var that = this;
     wx.request({
       url: config.BASE_URL + '/dogAndOwner/selectDogBanList',

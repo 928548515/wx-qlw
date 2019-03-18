@@ -38,26 +38,26 @@ Page({
 
   },
   initData(isAppend = false) {
-    http("/ban/findAll", "get", {
-      pn: this.data.page.num,
-      pageSize: this.data.page.size
-    }).then(res => {
-      if (res.data.status == 200) {
-        let forbid_dogs = res.data.data.lists;
-        if (isAppend) {
-          forbid_dogs = forbid_dogs.concat(this.data.forbid_dogs);
-        }
-        forbid_dogs.map(x=>{
-          x.creationTime = dateFormat(x.creationTime,"yyyy/MM/dd HH:mm:ss")
-        })
-        this.data.page.totalCount = res.data.data.totalRecord;
-        this.setData({
-          forbid_dogs: forbid_dogs,
-          page: this.data.page
-        })
-      }
-    })
-    return;
+    // http("/ban/findAll", "get", {
+    //   pn: this.data.page.num,
+    //   pageSize: this.data.page.size
+    // }).then(res => {
+    //   if (res.data.status == 200) {
+    //     let forbid_dogs = res.data.data.lists;
+    //     if (isAppend) {
+    //       forbid_dogs = forbid_dogs.concat(this.data.forbid_dogs);
+    //     }
+    //     forbid_dogs.map(x=>{
+    //       x.creationTime = dateFormat(x.creationTime,"yyyy/MM/dd HH:mm:ss")
+    //     })
+    //     this.data.page.totalCount = res.data.data.totalRecord;
+    //     this.setData({
+    //       forbid_dogs: forbid_dogs,
+    //       page: this.data.page
+    //     })
+    //   }
+    // })
+    // return;
     http("/dogAndOwner/selectDogBanList", "get", {
       num: this.data.page.num,
       size: this.data.page.size,

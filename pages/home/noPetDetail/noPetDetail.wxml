@@ -6,7 +6,7 @@
     <view class='content'>
       <view class='view-txt'>
         <view>犬种名称：</view>
-        <view>{{banInfo.tDictionary.dictionaryDescribe}}</view>
+        <view>{{banInfo.dogBanName}}</view>
       </view>
       <view class='view-txt'>
         <view>备注信息：</view>
@@ -21,11 +21,9 @@
   <view class='item'>
     <image src='/assets/page/my/pet/petInfo/nail-icon.png' class='nail'></image>
     <view class='titile'>犬种图片</view>
-    <view class='content' wx:if="{{banInfo.tImages && banInfo.tImages.length>0}}">
+    <view class='content' wx:if="{{banInfo.thumbnailUrl }}">
       <view class='view-txt'>
-        <scroll-view class='pic-content' scroll-x="true">
-          <image wx:for='{{banInfo.tImages}}' wx:for-item="e" wx:if='{{e.thumbnailUrl}}' wx:key='{{index}}' src='{{e.thumbnailUrl}}' bindtap='showImageInfo' data-index="{{index}}"></image>
-        </scroll-view>
+        <image src='{{banInfo.url }}'></image>
       </view>
     </view>
     <view class='none' wx:else>

@@ -4,12 +4,12 @@
     <block wx:for="{{ forbid_dogs }}" wx:key="index" catchtap="tobanDetail" data-item="{{item}}">
       <view class='forbid_dog_box' catchtap="tobanDetail" data-item='{{item}}'>
         <view class='forbid_dog_item'>
-          <image src='{{ item.tImages[0].thumbnailUrl }}'></image>
+          <image src='{{ item.thumbnailUrl }}'></image>
         </view>
         <view class='content'>
           <view class='client'>
             <text>犬种名：</text>
-            <text>{{ item.tDictionary.dictionaryDescribe?item.tDictionary.dictionaryDescribe:"" }}</text>
+            <text>{{ item.dogBanName?item.dogBanName:"" }}</text>
           </view>
           <view class='client'>
             <text>列入时间：</text>
